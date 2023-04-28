@@ -5,7 +5,7 @@ import ImageElementProps from '../../types/image-props';
 
 import styles from './Image.module.css';
 
-interface ImageProps extends ImageElementProps {
+export interface ImageProps extends ImageElementProps {
   rounded?: boolean;
 }
 
