@@ -8,8 +8,8 @@ import {
   CheckoutSummary,
 } from '../../domains/checkout/components';
 import useCheckout from '../../domains/checkout/hooks/use-checkout';
-import { useRouter } from '../../framework';
 import useDictionary from '../../localization/use-dictionary';
+import { useRouter } from '../../platform';
 import { ShippingOptionData } from '../../types/models';
 import { Heading, Loader } from '../../ui';
 import useSubmitFormRemotely from '../../utils/use-submit-form-remotely';

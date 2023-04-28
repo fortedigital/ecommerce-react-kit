@@ -1,6 +1,6 @@
 ﻿import clsx from 'clsx';
 
-import { Image as ImageElement } from '../../framework';
+import { Image as ImageElement } from '../../platform';
 import ImageElementProps from '../../types/image-props';
 
 import styles from './Image.module.css';

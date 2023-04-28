@@ -1,4 +1,4 @@
-﻿import { useRouter } from '../../../../framework';
+﻿import { useRouter } from '../../../../platform';
 import { ProductData } from '../../../../types/models';
 import { Button } from '../../../../ui';
 import { useAddItem } from '../../hooks';
