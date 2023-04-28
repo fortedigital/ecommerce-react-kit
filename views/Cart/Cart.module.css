@@ -1,0 +1,6 @@
+﻿.identifier {
+  display: inline-block;
+  margin: var(--size-2x) 0 0;
+  font-size: var(--font-size-extra-small);
+  color: var(--color-text-light);
+}

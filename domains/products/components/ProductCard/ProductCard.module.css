@@ -1,0 +1,26 @@
+﻿.discount {
+  display: inline-block;
+  font-size: var(--font-size-extra-small);
+  line-height: var(--line-height-small);
+  text-align: right;
+
+  & .value {
+    font-weight: var(--font-weight-semi-bold);
+  }
+  
+  & .discountedPrice {
+    color: var(--color-text-light);
+    text-decoration: line-through;
+  }
+}
+
+.price {
+  display: inline-block;
+  margin: 0 0 var(--size-4x);
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-small);
+}
+
+.discount + .price {
+  margin-left: var(--size-2x);
+}

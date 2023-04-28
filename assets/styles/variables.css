@@ -1,0 +1,72 @@
+﻿:root {
+  /* Colors */
+  --color-primary: var(--color-black-900);
+  --color-secondary: var(--color-white);
+  --color-accent: var(--color-purple);
+  --color-danger: var(--color-red);
+
+  --color-border: var(--color-grey-200);
+
+  --color-text-light: var(--color-black-400);
+  --color-text-regular: var(--color-black-900);
+
+  --color-white: #fff;
+  --color-grey-100: #f8f8f8;
+  --color-grey-200: #e5e5e5;
+  --color-purple: #dad9ff;
+  --color-red: #e70014;
+  --color-black-400: #3b3b3b;
+  --color-black-900: #242424;
+
+  /* Fonts */
+
+  --font-size-extra-small: 1.4rem;
+  --font-size-small: 1.6rem;
+  --font-size-regular: 1.8rem;
+  --font-size-large: 2.4rem;
+  --font-size-extra-large: 4.8rem;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-small: 1.15;
+  --line-height-regular: 1.7;
+
+  /* Sizes */
+
+  --size-min-tap-target: 4.8rem;
+
+  --size: 0.8rem;
+  --size-half: 0.4rem;
+  --size-2x: 1.6rem;
+  --size-3x: 2.4rem;
+  --size-4x: 3.2rem;
+  --size-5x: 4rem;
+  --size-6x: 4.8rem;
+  --size-7x: 5.6rem;
+  --size-8x: 6.4rem;
+  --size-9x: 7.2rem;
+  --size-10x: 8rem;
+
+  /* Grid */
+
+  --gap-extra-small: var(--size-2x);
+  --gap-small: var(--size-3x);
+  --gap-medium: var(--size-5x);
+  --gap-large: var(--size-10x);
+
+  --block-gap-small: var(--size-4x);
+  --block-gap-medium: var(--size-7x);
+  --block-gap-large: var(--size-10x);
+
+  --layout-gap: var(--size-5x);
+
+  /* Borders */
+
+  --border-regular: 1px solid var(--color-border);
+
+  --border-radius: 8px;
+}

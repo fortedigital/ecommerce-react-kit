@@ -1,0 +1,32 @@
+.root {
+  width: 100%;
+}
+
+.rowWrapper {
+  display: block;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 50% repeat(3, 1fr);
+  grid-auto-flow: column;
+  gap: var(--gap-small);
+  align-items: center;
+  justify-items: center;
+  padding: var(--gap-small);
+  border-bottom: var(--border-regular);
+
+  &.header {
+    padding-block: 0 var(--gap-extra-small);
+  }
+
+  &:nth-child(odd):not(.header) {
+    background-color: var(--color-grey-100);
+  }
+}
+
+.heading {
+  padding: 0;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+}

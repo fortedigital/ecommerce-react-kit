@@ -1,0 +1,10 @@
+﻿.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: min(65vh, 700px);
+  padding: var(--size-8x);
+  background-color: var(--color-grey-200);
+  border-radius: var(--border-radius);
+}

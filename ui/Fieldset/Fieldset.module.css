@@ -1,0 +1,19 @@
+﻿.root {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.legend {
+  margin: 0 0 var(--size-3x);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+
+  & .required {
+    color: var(--color-danger);
+  }
+}
+
+.error {
+  margin-top: var(--size-half);
+}

@@ -1,0 +1,26 @@
+﻿.root {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: stretch;
+  width: 100%;
+  padding: var(--size-3x);
+  border: var(--border-regular);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+
+  @nest fieldset[aria-invalid="true"] & {
+    border-color: var(--color-danger);
+  }
+}
+
+.input {
+  position: relative;
+  top: var(--size-half);
+  width: 1.8rem;
+  height: 1.8rem;
+  margin: 0 var(--size-2x) 0 0;
+  accent-color: hsl(242deg 100% 76%);
+  vertical-align: baseline;
+}

@@ -1,0 +1,14 @@
+﻿.title,
+.error {
+  padding-left: var(--size-2x);
+}
+
+.title {
+  margin: 0 0 var(--size);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-light);
+}
+
+.error {
+  margin-top: var(--size-half);
+}

@@ -1,0 +1,57 @@
+﻿.root {
+  margin-block: 0;
+  font: inherit;
+
+  & > a {
+    text-decoration: none;
+  }
+}
+
+.extraExtraSmall {
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  margin-block-end: var(--size-2x);
+}
+
+.extraSmall {
+  font-size: 2.4rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+}
+
+.small {
+  font-size: 3.2rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  margin-block-end: var(--size-5x);
+}
+
+.medium {
+  font-size: 4.2rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  margin-block-end: var(--size-5x);
+}
+
+.large {
+  font-size: 5.4rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  margin-block-end: var(--size-5x);
+}
+
+.extraLarge {
+  font-size: 7.4rem;
+  font-weight: var(--font-weight-semi-bold);
+  line-height: 1.5;
+  margin-block-end: var(--size-5x);
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}

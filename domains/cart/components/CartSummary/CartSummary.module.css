@@ -1,0 +1,29 @@
+﻿.priceLabel {
+  display: block;
+  font-size: var(--font-size-extra-small);
+  line-height: 1;
+}
+
+.price {
+  font-size: var(--font-size-extra-large);
+}
+
+.discount {
+  margin: var(--size) 0 0;
+  font-size: var(--font-size-extra-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent);
+}
+
+.originalPrice {
+  font-size: var(--font-size-extra-small);
+}
+
+.disclaimer {
+  margin: var(--size-2x) 0 0;
+  font-size: var(--font-size-extra-small);
+}
+
+.link {
+  margin: var(--gap-small) 0 0;
+}

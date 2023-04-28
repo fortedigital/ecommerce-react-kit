@@ -1,0 +1,14 @@
+﻿.root {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: var(--size-2x);
+  width: 100%;
+}
+
+.name {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.deliveryTime {
+  color: var(--color-text-light);
+}

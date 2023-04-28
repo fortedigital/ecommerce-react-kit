@@ -1,0 +1,36 @@
+﻿@import 'modern-normalize';
+@import 'variables.css';
+@import 'utils.css';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-regular);
+  color: var(--color-text-regular);
+}
+
+a {
+  color: inherit;
+}
+
+dl,
+p {
+  margin-block: 0;
+}
+
+dt,
+dd {
+  display: inline;
+}
+
+dd {
+  margin-inline-start: 0;
+}
+
+dt + dd::before {
+  content: ' ';
+}

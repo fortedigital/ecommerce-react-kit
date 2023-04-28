@@ -1,0 +1,15 @@
+﻿.title {
+  margin-bottom: var(--size-8x);
+}
+
+.cost {
+  margin-top: var(--size-5x);
+}
+
+.details {
+  font-size: var(--font-size-small);
+
+  &:not(:first-child) {
+    margin-top: var(--size-5x);
+  }
+}

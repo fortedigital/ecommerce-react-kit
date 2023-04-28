@@ -1,0 +1,147 @@
+﻿{
+  "cart": {
+    "title": "Koszyk",
+    "count": "{count, plural, =1 {# produkt} few {# produkty} other {# produktów}} w koszyku",
+    "identifier": "Identyfikator koszyka: {id}"
+  },
+  "cartEmpty": {
+    "noItems": "Brak produktów w koszyku",
+    "toCatalog": "Rozpocznij zakupy"
+  },
+  "cartItem": {
+    "delete": "Usuń produkt",
+    "quantity": "Liczba sztuk"
+  },
+  "cartLink": {
+    "count": "Koszyk: {count, plural, =1 {# produkt} few {# produkty} other {# produktów}}"
+  },
+  "cartSummary": {
+    "title": "Podsumowanie koszyka",
+    "deliveryCharge": "Opłata za dostawę jest naliczana przy kasie.",
+    "discount": "Rabat:",
+    "originalPrice": "Cena początkowa:",
+    "subtotal": "Wartość koszyka",
+    "toCheckout": "Przejdź do kasy"
+  },
+  "catalog": {
+    "title": "Produkty"
+  },
+  "checkout": {
+    "title": "Kasa"
+  },
+  "checkoutForm": {
+    "contact": {
+      "title": "Dane kontaktowe",
+      "fields": {
+        "email": {
+          "label": "Adres mailowy",
+          "errors": {
+            "invalid": "Wprowadź poprawny adres mailowy.",
+            "required": "Wprowadź adres mailowy."
+          }
+        },
+        "firstName": {
+          "label": "Imię",
+          "errors": {
+            "required": "Wprowadź imię."
+          }
+        },
+        "lastName": {
+          "label": "Nazwisko",
+          "errors": {
+            "required": "Wprowadź nazwisko."
+          }
+        },
+        "phoneNumber": {
+          "label": "Numer telefonu",
+          "errors": {
+            "required": "Wprowadź numer telefonu."
+          }
+        }
+      }
+    },
+    "delivery": {
+      "title": "Dostawa",
+      "fields": {
+        "addressLine": {
+          "label": "Adres",
+          "errors": {
+            "required": "Wprowadź adres."
+          }
+        },
+        "city": {
+          "label": "Miasto",
+          "errors": {
+            "required": "Wprowadź miasto."
+          }
+        },
+        "country": {
+          "label": "Kraj",
+          "errors": {
+            "required": "Wprowadź kraj."
+          }
+        },
+        "zipCode": {
+          "label": "Kod pocztowy",
+          "errors": {
+            "required": "Wprowadź kod pocztowy."
+          }
+        },
+        "shippingMethod": {
+          "label": "Forma dostawy",
+          "errors": {
+            "required": "Wybierz formę dostawy."
+          }
+        }
+      }
+    }
+  },
+  "checkoutSummary": {
+    "title": "Podsumowanie",
+    "cart": "Koszyk",
+    "deliveryCost": "Koszt dostawy",
+    "discount": "Rabat",
+    "quantity": "{{count}} szt.",
+    "subtotal": "Wartość koszyka",
+    "toPayment": "Zamów i zapłać",
+    "toShippingMethod": "Wybierz formę dostawy",
+    "total": "Do zapłaty"
+  },
+  "home": {
+    "hero": {
+      "title": "Ecommerce Starter Pack - Next.js",
+      "cta": "Rozpocznij zakupy"
+    },
+    "products": "Popularne produkty",
+    "toProducts": "Odkryj pozostałe produkty"
+  },
+  "lineItems": {
+    "product": "Produkt",
+    "quantity": "Liczba sztuk",
+    "unitPrice": "Koszt 1 sztuki",
+    "total": "Suma"
+  },
+  "navigation": {
+    "menu": "Menu",
+    "products": "Produkty"
+  },
+  "order": {
+    "title": "Zamówienie #{id}",
+    "contactDetails": "Dane kontaktowe",
+    "deliveryAddress": "Adress dostawy"
+  },
+  "orderSummary": {
+    "discount": "Rabat",
+    "shippingTotal": "Koszt dostawy",
+    "subtotal": "Wartość koszyka",
+    "total": "Do zapłaty"
+  },
+  "product": {
+    "discount": "-{percent}%",
+    "toCart": "Dodaj do koszyka"
+  },
+  "productCard": {
+    "discount": "-{percent}%",
+    "toProduct": "Przejdź do produktu"
+  }
+}

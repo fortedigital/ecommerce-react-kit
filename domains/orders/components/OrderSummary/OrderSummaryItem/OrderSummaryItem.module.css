@@ -1,0 +1,27 @@
+﻿.root {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--size-2x) var(--size-3x);
+  border-top: var(--border-regular);
+  font-size: var(--font-size-small);
+
+  &:nth-child(odd) {
+    background-color: var(--color-grey-100);
+  }
+
+  &:last-child {
+    border-bottom: var(--border-regular);
+  }
+  
+  & .label {
+    font-size: var(--font-size-small);
+  }
+  
+  & .value {
+    width: 15%;
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+  }
+}

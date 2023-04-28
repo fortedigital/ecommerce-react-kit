@@ -1,0 +1,8 @@
+﻿.root {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--size-10x);
+  padding: var(--size-4x) 0;
+}

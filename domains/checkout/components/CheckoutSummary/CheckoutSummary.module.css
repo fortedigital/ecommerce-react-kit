@@ -1,0 +1,77 @@
+﻿.data {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-small);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: var(--gap-extra-small);
+
+  & .link {
+    text-decoration: none;
+  }
+
+  & .image {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  & .details {
+    grid-column: 2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & .quantity {
+      font-size: var(--font-size-small);
+    }
+
+    & .pricing {
+      grid-column: 2;
+      text-align: right;
+
+      & .regularPrice {
+        display: block;
+        font-size: var(--font-size-extra-small);
+        text-decoration: line-through;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.data,
+.item {
+  padding: var(--gap-extra-small) 0;
+  border-bottom: 1px solid var(--color-black-400);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.lineItems {
+  width: 100%;
+}
+
+.discount {
+  color: var(--color-accent);
+}
+
+.totalPrice {
+  font-size: var(--font-size-large);
+}
+
+.button {
+  margin: var(--size-4x) 0 0;
+}

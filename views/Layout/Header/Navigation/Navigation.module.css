@@ -1,0 +1,6 @@
+﻿.root {
+  display: grid;
+  align-items: center;
+  gap: var(--gap-extra-small);
+  grid-auto-flow: column;
+}

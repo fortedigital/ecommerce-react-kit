@@ -1,0 +1,14 @@
+﻿.root {
+  padding: var(--size-4x);
+  border-radius: var(--border-radius);
+
+  &.dark {
+    background-color: var(--color-black-900);
+    color: var(--color-white);
+  }
+
+  &.light {
+    background-color: var(--color-grey-100);
+    border: var(--border-regular);
+  }
+}

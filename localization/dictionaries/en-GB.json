@@ -1,0 +1,147 @@
+﻿{
+  "cart": {
+    "title": "Cart",
+    "count": "{count, plural, =1 {# item} other {# items}} in your cart",
+    "identifier": "Cart identifier: {id}"
+  },
+  "cartEmpty": {
+    "noItems": "There are no items in your cart",
+    "toCatalog": "Go shopping"
+  },
+  "cartItem": {
+    "delete": "Delete item",
+    "quantity": "Quantity"
+  },
+  "cartLink": {
+    "count": "Cart: {count, plural, =1 {# item} other {# items}}"
+  },
+  "cartSummary": {
+    "title": "Summary",
+    "deliveryCharge": "Charge for delivery is calculated at checkout.",
+    "discount": "Discount:",
+    "originalPrice": "Original price:",
+    "subtotal": "Subtotal",
+    "toCheckout": "Checkout"
+  },
+  "catalog": {
+    "title": "Products"
+  },
+  "checkout": {
+    "title": "Checkout"
+  },
+  "checkoutForm": {
+    "contact": {
+      "title": "Contact details",
+      "fields": {
+        "email": {
+          "label": "Email address",
+          "errors": {
+            "invalid": "Please enter a valid email address.",
+            "required": "Please enter an email address."
+          }
+        },
+        "firstName": {
+          "label": "First name",
+          "errors": {
+            "required": "Please enter a first name."
+          }
+        },
+        "lastName": {
+          "label": "Last name",
+          "errors": {
+            "required": "Please enter a last name."
+          }
+        },
+        "phoneNumber": {
+          "label": "Phone number",
+          "errors": {
+            "required": "Please enter a phone number."
+          }
+        }
+      }
+    },
+    "delivery": {
+      "title": "Delivery details",
+      "fields": {
+        "addressLine": {
+          "label": "Address line",
+          "errors": {
+            "required": "Please enter an address."
+          }
+        },
+        "city": {
+          "label": "City",
+          "errors": {
+            "required": "Please enter a city."
+          }
+        },
+        "country": {
+          "label": "Country",
+          "errors": {
+            "required": "Please enter a country."
+          }
+        },
+        "zipCode": {
+          "label": "Postcode",
+          "errors": {
+            "required": "Please enter a postcode."
+          }
+        },
+        "shippingMethod": {
+          "label": "Shipping method",
+          "errors": {
+            "required": "Please pick a shipping method."
+          }
+        }
+      }
+    }
+  },
+  "checkoutSummary": {
+    "title": "Checkout summary",
+    "cart": "Cart",
+    "deliveryCost": "Delivery cost",
+    "discount": "Discount",
+    "quantity": "Qty. {count}",
+    "subtotal": "Subtotal",
+    "toPayment": "Order & pay",
+    "toShippingMethod": "Pick shipping method",
+    "total": "Total"
+  },
+  "home": {
+    "hero": {
+      "title": "Ecommerce Starter Pack - Next.js",
+      "cta": "Start shopping"
+    },
+    "products": "Popular products",
+    "toProducts": "Explore all products"
+  },
+  "lineItems": {
+    "product": "Product",
+    "quantity": "Quantity",
+    "unitPrice": "Unit price",
+    "total": "Total"
+  },
+  "navigation": {
+    "menu": "Menu",
+    "products": "Products"
+  },
+  "order": {
+    "title": "Order #{id}",
+    "contactDetails": "Contact details",
+    "deliveryAddress": "Delivery details"
+  },
+  "orderSummary": {
+    "discount": "Discount",
+    "shippingTotal": "Shipping",
+    "subtotal": "Subtotal",
+    "total": "Total"
+  },
+  "product": {
+    "discount": "{percent}% off",
+    "toCart": "Add to cart"
+  },
+  "productCard": {
+    "discount": "{percent}% off",
+    "toProduct": "Go to product"
+  }
+}
