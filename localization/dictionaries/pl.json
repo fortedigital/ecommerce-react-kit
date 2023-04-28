@@ -1,4 +1,10 @@
 ﻿{
+  "404": {
+    "title": "404 - strona nie została odnaleziona"
+  },
+  "500":{
+    "title": "500 - wystąpił błąd po stronie serwera"
+  },
   "cart": {
     "title": "Koszyk",
     "count": "{count, plural, =1 {# produkt} few {# produkty} other {# produktów}} w koszyku",

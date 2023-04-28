@@ -1,4 +1,10 @@
 ﻿{
+  "404": {
+    "title": "404 - Page Not Found"
+  },
+  "500":{
+    "title": "500 - Server-side error occurred"
+  }, 
   "cart": {
     "title": "Cart",
     "count": "{count, plural, =1 {# item} other {# items}} in your cart",
