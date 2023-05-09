@@ -1,0 +1,47 @@
+﻿.root {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.discount {
+  line-height: var(--line-height-small);
+  text-align: right;
+
+  & .value {
+    font-weight: var(--font-weight-semi-bold);
+  }
+
+  & .originalPrice {
+    color: var(--color-text-light);
+    text-decoration: line-through;
+  }
+}
+
+.price {
+  display: block;
+}
+
+.medium {
+  & .discount {
+    font-size: var(--font-size-extra-small);
+  }
+
+  & .price {
+    font-size: var(--font-size-medium);
+  }
+}
+
+.large {
+  & .discount {
+    font-size: var(--font-size-small);
+  }
+
+  & .price {
+    font-size: var(--font-size-large);
+  }
+}
+
+.discount + .price {
+  margin-left: var(--size-2x);
+}

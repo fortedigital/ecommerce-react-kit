@@ -12,34 +12,7 @@
 }
 
 .pricing {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
   margin: var(--size-5x) 0;
-
-  & .discount {
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
-    text-align: right;
-
-    & .value {
-      font-weight: var(--font-weight-semi-bold);
-    }
-
-    & .originalPrice {
-      color: var(--color-text-light);
-      text-decoration: line-through;
-    }
-  }
-
-  & .price {
-    display: block;
-    font-size: var(--font-size-large);
-  }
-
-  & .discount + .price {
-    margin-left: var(--size-2x);
-  }
 }
 
 .imageContainer {

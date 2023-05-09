@@ -1,6 +1,8 @@
-﻿import useDictionary from '../../../../localization/use-dictionary';
+﻿import ProductPrice from '../ProductPrice';
+
+import useDictionary from '../../../../localization/use-dictionary';
 import { ProductListItemData } from '../../../../types/models';
-import { Card, HeadingLevel, Price } from '../../../../ui';
+import { Card, HeadingLevel } from '../../../../ui';
 
 import styles from './ProductCard.module.css';
 
@@ -21,32 +23,14 @@ export default function ProductCard({ level, product }: ProductCardProps) {
       label={translate('toProduct')}
       href={product.url}
     >
-      {product.price && (
-        <>
-          {product.discounted && (
-            <div className={styles.discount}>
-              {product.discountPercent && (
-                <div className={styles.value}>
-                  {translate('discount', { percent: product.discountPercent })}
-                </div>
-              )}
-              {product.originalPrice && (
-                <Price
-                  className={styles.discountedPrice}
-                  amount={product.originalPrice.amount}
-                  currencyCode={product.originalPrice.currencyCode}
-                />
-              )}
-            </div>
-          )}
-          <Price
-            className={styles.price}
-            amount={product.price.amount}
-            currencyCode={product.price.currencyCode}
-            total
-          />
-        </>
-      )}
+      <ProductPrice
+        className={styles.price}
+        discounted={product.discounted}
+        discountPercent={product.discountPercent}
+        originalPrice={product.originalPrice}
+        price={product.price}
+        size="m"
+      />
     </Card>
   );
 }

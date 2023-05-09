@@ -2,7 +2,7 @@
   "404": {
     "title": "404 - strona nie została odnaleziona"
   },
-  "500":{
+  "500": {
     "title": "500 - wystąpił błąd po stronie serwera"
   },
   "cart": {
@@ -143,14 +143,15 @@
     "total": "Do zapłaty"
   },
   "product": {
-    "discount": "-{percent}%",
     "toCart": "Dodaj do koszyka"
   },
   "productCard": {
-    "discount": "-{percent}%",
     "toProduct": "Przejdź do produktu"
   },
   "productOption": {
     "size": "Wybierz swój rozmiar"
+  },
+  "productPrice": {
+    "discount": "-{percent}%"
   }
 }

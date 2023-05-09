@@ -19,18 +19,13 @@ export function restoreProductOptionChoicesFromUrl(
   }, []);
 }
 
-export function getChosenProductVariant(
+export function getActiveProductVariant(
   optionChoices: ProductOptionChoiceData[],
   variants: ProductVariantData[]
 ) {
-  return variants.find((variant) =>
-    optionChoices.every((optionChoice) =>
-      variant.options.some(
-        (variantOptionChoice) =>
-          variantOptionChoice.optionId === optionChoice.optionId &&
-          variantOptionChoice.value === optionChoice.value
-      )
-    )
+  return (
+    getChosenProductVariant(optionChoices, variants) ??
+    getMainProductVariant(variants)
   );
 }
 
@@ -49,4 +44,19 @@ export function buildProductUrl(
   });
   const searchParamsString = newSearchParams.toString();
   return searchParamsString ? `${pathname}?${searchParamsString}` : pathname;
+}
+
+function getChosenProductVariant(
+  optionChoices: ProductOptionChoiceData[],
+  variants: ProductVariantData[]
+) {
+  return variants.find((variant) =>
+    optionChoices.every((optionChoice) =>
+      variant.options.some(
+        (variantOptionChoice) =>
+          variantOptionChoice.optionId === optionChoice.optionId &&
+          variantOptionChoice.value === optionChoice.value
+      )
+    )
+  );
 }
