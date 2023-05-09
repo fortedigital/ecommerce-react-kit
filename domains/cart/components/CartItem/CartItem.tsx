@@ -38,7 +38,7 @@ export default function CartItem({ item }: CartItemProps) {
       <td className={clsx(styles.value, styles.info)}>
         <div>
           <Heading className={styles.title} level={2} size="xxs">
-            <Link href={`/products/${item.productId}`}>{item.name}</Link>
+            <Link href={item.url}>{item.name}</Link>
           </Heading>
           <span className={styles.options}>
             {item.options.map((x) => x.value).join(' | ')}

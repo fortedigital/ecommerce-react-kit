@@ -19,7 +19,7 @@ export default function ProductCard({ level, product }: ProductCardProps) {
       description={product.description}
       image={product.image}
       label={translate('toProduct')}
-      href={`/products/${product.id}`}
+      href={product.url}
     >
       {product.price && (
         <>

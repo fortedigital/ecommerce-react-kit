@@ -45,10 +45,7 @@ export default function CheckoutSummary({
                 <List.Item className={styles.item} key={item.id}>
                   <div>
                     <Heading level={3}>
-                      <Link
-                        className={styles.link}
-                        href={`/products/${item.productId}`}
-                      >
+                      <Link className={styles.link} href={item.url}>
                         {item.name}
                       </Link>
                     </Heading>
