@@ -49,6 +49,7 @@ export interface LineItemData extends EntityData {
   productId: string;
   unitPrice: PriceData;
   quantity: number;
+  options: ProductOptionChoiceData[];
   originalPrice: PriceData;
   discounted: boolean;
   price: PriceData;
@@ -65,7 +66,24 @@ export interface OrderData extends EntityData {
   total: PriceData;
 }
 
+export interface PriceData {
+  amount: number;
+  currencyCode: string;
+}
+
 export interface ProductData extends EntityData {
+  name: string;
+  options: ProductOptionData[];
+  variants: ProductVariantData[];
+  description?: string;
+  discounted?: boolean;
+  discountPercent?: number;
+  image?: ImageData;
+  originalPrice?: PriceData;
+  price?: PriceData;
+}
+
+export interface ProductListItemData extends EntityData {
   name: string;
   description?: string;
   discounted?: boolean;
@@ -73,12 +91,26 @@ export interface ProductData extends EntityData {
   image?: ImageData;
   originalPrice?: PriceData;
   price?: PriceData;
-  shortDescription?: string;
 }
 
-export interface PriceData {
-  amount: number;
-  currencyCode: string;
+export interface ProductOptionData extends EntityData {
+  values: string[];
+}
+
+export interface ProductOptionChoiceData {
+  optionId: string;
+  value: string;
+}
+
+export interface ProductVariantData extends EntityData {
+  name: string;
+  options: ProductOptionChoiceData[];
+  description?: string;
+  discounted?: boolean;
+  discountPercent?: number;
+  image?: ImageData;
+  originalPrice?: PriceData;
+  price?: PriceData;
 }
 
 export interface ShippingOptionData {

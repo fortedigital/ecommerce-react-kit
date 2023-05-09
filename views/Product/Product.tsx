@@ -1,9 +1,18 @@
-﻿import clsx from 'clsx';
+﻿import { useEffect } from 'react';
+import clsx from 'clsx';
 
+import ProductOptionList from '../../domains//products/components/ProductOptionList';
 import { AddToCartButton } from '../../domains/cart/components';
+import {
+  buildProductUrl,
+  getChosenProductVariant,
+  getMainProductVariant,
+  restoreProductOptionChoicesFromUrl,
+} from '../../domains/products/utils';
 import useDictionary from '../../localization/use-dictionary';
+import { useRouter } from '../../platform';
 import { ProductData } from '../../types/models';
-import { Heading, Image, Price } from '../../ui';
+import { Heading, Image, Markup, Price } from '../../ui';
 
 import styles from './Product.module.css';
 
@@ -13,61 +22,91 @@ interface ProductProps {
 
 export default function Product({ product }: ProductProps) {
   const translate = useDictionary('product');
+  const router = useRouter();
+
+  const optionChoices = restoreProductOptionChoicesFromUrl(
+    product.options,
+    router.searchParams
+  );
+  const chosenVariant = getChosenProductVariant(
+    optionChoices,
+    product.variants
+  );
+  const displayVariant =
+    chosenVariant ?? getMainProductVariant(product.variants);
+  const displayProduct = displayVariant ?? product;
+
+  useEffect(() => {
+    if (router.isReady && optionChoices.length === 0 && displayVariant) {
+      const url = buildProductUrl(
+        router.pathname,
+        router.searchParams,
+        displayVariant.options
+      );
+      router.replace(url);
+    }
+  }, [optionChoices.length, router, displayVariant]);
 
   return (
     <article className="block grid-l items-center">
       <div className="col-span-6">
-        <Heading level={1} size="l">
-          {product.name}
+        <Heading level={1} size="m">
+          {displayProduct.name}
         </Heading>
-        {product.description && (
-          <div
-            dangerouslySetInnerHTML={{ __html: product.description }}
-            className={styles.description}
+        {displayProduct.description && (
+          <Markup className={styles.description}>
+            {displayProduct.description}
+          </Markup>
+        )}
+        {product.options && (
+          <ProductOptionList
+            className={styles.variants}
+            options={product.options}
           />
         )}
-        {product.price && (
+        {displayProduct.price && (
           <>
             <div className={styles.pricing}>
-              {product.discounted && (
+              {displayProduct.discounted && (
                 <div className={styles.discount}>
-                  {product.discountPercent && (
+                  {displayProduct.discountPercent && (
                     <div className={styles.value}>
                       {translate('discount', {
-                        percent: product.discountPercent,
+                        percent: displayProduct.discountPercent,
                       })}
                     </div>
                   )}
-                  {product.originalPrice && (
+                  {displayProduct.originalPrice && (
                     <Price
                       className={styles.originalPrice}
-                      amount={product.originalPrice.amount}
-                      currencyCode={product.originalPrice.currencyCode}
+                      amount={displayProduct.originalPrice.amount}
+                      currencyCode={displayProduct.originalPrice.currencyCode}
                     />
                   )}
                 </div>
               )}
               <Price
                 className={styles.price}
-                amount={product.price.amount}
-                currencyCode={product.price.currencyCode}
+                amount={displayProduct.price.amount}
+                currencyCode={displayProduct.price.currencyCode}
                 total
               />
             </div>
-            <AddToCartButton item={product}>
+            <AddToCartButton itemId={displayProduct.id}>
               {translate('toCart')}
             </AddToCartButton>
           </>
         )}
       </div>
       <div className={clsx('col-span-6', styles.imageContainer)}>
-        {product.image && (
+        {displayProduct.image && (
           <Image
             className={styles.image}
-            src={product.image.src}
-            alt={product.image.alt}
+            src={displayProduct.image.src}
+            alt={displayProduct.image.alt}
             height={900}
             width={900}
+            preload
           />
         )}
       </div>

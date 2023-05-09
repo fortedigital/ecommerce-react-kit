@@ -43,14 +43,17 @@ export default function CheckoutSummary({
             <List items={cart.lineItems}>
               {(item) => (
                 <List.Item className={styles.item} key={item.id}>
-                  <Heading level={3}>
-                    <Link
-                      className={styles.link}
-                      href={`/products/${item.productId}`}
-                    >
-                      {item.name}
-                    </Link>
-                  </Heading>
+                  <div>
+                    <Heading level={3}>
+                      <Link
+                        className={styles.link}
+                        href={`/products/${item.productId}`}
+                      >
+                        {item.name}
+                      </Link>
+                    </Heading>
+                    <span>{item.options.map((x) => x.value).join(' | ')}</span>
+                  </div>
                   {item.image && (
                     <Thumbnail
                       className={styles.image}

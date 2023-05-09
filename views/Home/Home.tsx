@@ -1,10 +1,10 @@
 ﻿import { ProductList } from '../../domains/products/components';
 import useDictionary from '../../localization/use-dictionary';
-import { ProductData } from '../../types/models';
+import { ProductListItemData } from '../../types/models';
 import { Heading, Hero, Link } from '../../ui';
 
 interface HomeProps {
-  products: ProductData[];
+  products: ProductListItemData[];
 }
 
 export default function Home({ products }: HomeProps) {

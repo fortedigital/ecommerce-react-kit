@@ -17,7 +17,7 @@
 .price {
   display: inline-block;
   margin: 0 0 var(--size-4x);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   line-height: var(--line-height-small);
 }
 

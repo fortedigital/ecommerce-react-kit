@@ -6,7 +6,7 @@ import styles from './List.module.css';
 interface ListProps<TItem> {
   items: TItem[];
   children: (item: TItem, index: number) => React.ReactElement;
-  as?: 'ol' | 'ul';
+  as?: 'dl' | 'ol' | 'ul';
   className?: string;
 }
 

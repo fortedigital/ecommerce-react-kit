@@ -36,9 +36,14 @@ export default function CartItem({ item }: CartItemProps) {
   return (
     <>
       <td className={clsx(styles.value, styles.info)}>
-        <Heading className={styles.title} level={2} size="xxs">
-          <Link href={`/products/${item.productId}`}>{item.name}</Link>
-        </Heading>
+        <div>
+          <Heading className={styles.title} level={2} size="xxs">
+            <Link href={`/products/${item.productId}`}>{item.name}</Link>
+          </Heading>
+          <span className={styles.options}>
+            {item.options.map((x) => x.value).join(' | ')}
+          </span>
+        </div>
         {item.image && (
           <Thumbnail
             className={styles.thumbnail}

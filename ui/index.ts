@@ -11,6 +11,7 @@ export { default as Input } from './Input';
 export { default as Link } from './Link';
 export { default as List } from './List';
 export { default as Loader } from './Loader';
+export { default as Markup } from './Markup';
 export { default as Price } from './Price';
 export { default as Radio } from './Radio';
 export { default as RadioGroup } from './RadioGroup';

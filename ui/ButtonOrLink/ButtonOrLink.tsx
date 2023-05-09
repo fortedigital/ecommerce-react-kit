@@ -18,6 +18,7 @@ export default function ButtonOrLink({
   fullWidth = false,
   size,
   variant,
+  ...props
 }: ButtonOrLinkProps) {
   return (
     <children.type
@@ -39,6 +40,7 @@ export default function ButtonOrLink({
         className
       )}
       {...children.props}
+      {...props}
     />
   );
 }

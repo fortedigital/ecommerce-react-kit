@@ -1,11 +1,11 @@
 ﻿import useDictionary from '../../../../localization/use-dictionary';
-import { ProductData } from '../../../../types/models';
+import { ProductListItemData } from '../../../../types/models';
 import { Card, HeadingLevel, Price } from '../../../../ui';
 
 import styles from './ProductCard.module.css';
 
 interface ProductCardProps {
-  product: ProductData;
+  product: ProductListItemData;
   level: HeadingLevel;
 }
 
@@ -16,7 +16,7 @@ export default function ProductCard({ level, product }: ProductCardProps) {
     <Card
       level={level}
       title={product.name}
-      description={product.shortDescription}
+      description={product.description}
       image={product.image}
       label={translate('toProduct')}
       href={`/products/${product.id}`}

@@ -1,13 +1,13 @@
 ﻿import ProductCard from '../ProductCard';
 
-import { ProductData } from '../../../../types/models';
+import { ProductListItemData } from '../../../../types/models';
 import { HeadingLevel, List } from '../../../../ui';
 
 import styles from './ProductList.module.css';
 
 interface ProductListProps {
   level: HeadingLevel;
-  products: ProductData[];
+  products: ProductListItemData[];
 }
 
 export default function ProductList({

@@ -149,5 +149,8 @@
   "productCard": {
     "discount": "{percent}% off",
     "toProduct": "Go to product"
+  },
+  "productOption": {
+    "size": "Choose your size"
   }
 }

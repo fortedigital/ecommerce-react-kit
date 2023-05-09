@@ -1,7 +1,7 @@
 ﻿import ButtonOrLink, { ButtonOrLinkProps } from '../ButtonOrLink';
 
 import { Link as LinkElement } from '../../platform';
-import LinkElementProps from '../../types/link-props';
+import { LinkProps as LinkElementProps } from '../../types/platform';
 
 type LinkProps = Omit<ButtonOrLinkProps, 'children'> & LinkElementProps;
 

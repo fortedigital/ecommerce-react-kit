@@ -1,15 +1,24 @@
 ﻿.description {
-  margin: 0 0 var(--size-3x) ;
+  max-width: 70ch;
   color: var(--color-text-light);
+}
+
+.variants {
+  margin: 0 0 var(--size-4x);
+}
+
+.description + .variants {
+  margin-top: var(--size-5x);
 }
 
 .pricing {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  margin-bottom: var(--size-4x);
+  margin: var(--size-5x) 0;
 
   & .discount {
+    font-size: var(--font-size-small);
     line-height: var(--line-height-small);
     text-align: right;
 
@@ -25,11 +34,11 @@
 
   & .price {
     display: block;
-    font-size: var(--font-size-extra-large);
+    font-size: var(--font-size-large);
   }
 
   & .discount + .price {
-    margin-left: var(--size-3x);
+    margin-left: var(--size-2x);
   }
 }
 

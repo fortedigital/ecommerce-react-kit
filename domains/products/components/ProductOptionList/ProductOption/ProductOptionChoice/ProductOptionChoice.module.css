@@ -1,0 +1,16 @@
+﻿.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--size-min-tap-target);
+  min-height: var(--size-min-tap-target);
+  padding: var(--size);
+  border: var(--border-regular);
+  font-size: var(--font-size-small);
+  border-radius: var(--border-radius);
+
+  &[aria-current="page"] {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+  }
+}
