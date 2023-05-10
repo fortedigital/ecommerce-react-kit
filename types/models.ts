@@ -38,7 +38,6 @@ export interface CustomerData extends EntityData {
   address?: AddressData;
 }
 
-
 export interface ImageData {
   alt: string;
   src: string;
@@ -95,12 +94,13 @@ export interface ProductListItemData extends EntityData {
   price?: PriceData;
 }
 
-export interface ProductOptionData extends EntityData {
+export interface ProductOptionData {
+  id: ProductOption;
   values: string[];
 }
 
 export interface ProductOptionChoiceData {
-  optionId: string;
+  parentId: ProductOption;
   value: string;
 }
 
@@ -126,4 +126,8 @@ export interface ShippingOptionData {
 export interface ShipmentData {
   address: AddressData;
   shippingMethodName: string;
+}
+
+export enum ProductOption {
+  Size = 'size',
 }

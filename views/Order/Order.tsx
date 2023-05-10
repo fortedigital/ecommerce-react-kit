@@ -1,6 +1,6 @@
 ﻿import { Address } from '../../domains/contact';
-import { LineItems } from '../../domains/line-items/components';
-import { OrderLineItem, OrderSummary } from '../../domains/orders/components';
+import { LineItem, LineItems } from '../../domains/line-items/components';
+import { OrderSummary } from '../../domains/orders/components';
 import useDictionary from '../../localization/use-dictionary';
 import { OrderData } from '../../types/models';
 import { Box, Heading } from '../../ui';
@@ -22,7 +22,7 @@ export default function Page({ order }: OrderProps) {
       <div className="grid-l gap-row-l">
         <div className="col-span-9">
           <LineItems items={order.lineItems}>
-            {(item) => <OrderLineItem item={item} />}
+            {(item) => <LineItem item={item} />}
           </LineItems>
           <OrderSummary
             className={styles.cost}

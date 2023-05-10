@@ -12,7 +12,7 @@ export function restoreProductOptionChoicesFromUrl(
     const choice = urlSearchParams.get(option.id);
 
     if (choice) {
-      choices.push({ optionId: option.id, value: choice });
+      choices.push({ parentId: option.id, value: choice });
     }
 
     return choices;
@@ -39,8 +39,8 @@ export function buildProductUrl(
   optionChoices: ProductOptionChoiceData[]
 ) {
   const newSearchParams = new URLSearchParams(searchParams);
-  optionChoices.forEach(({ optionId, value }) => {
-    newSearchParams.set(optionId, value);
+  optionChoices.forEach(({ parentId, value }) => {
+    newSearchParams.set(parentId, value);
   });
   const searchParamsString = newSearchParams.toString();
   return searchParamsString ? `${pathname}?${searchParamsString}` : pathname;
@@ -54,7 +54,7 @@ function getChosenProductVariant(
     optionChoices.every((optionChoice) =>
       variant.options.some(
         (variantOptionChoice) =>
-          variantOptionChoice.optionId === optionChoice.optionId &&
+          variantOptionChoice.parentId === optionChoice.parentId &&
           variantOptionChoice.value === optionChoice.value
       )
     )

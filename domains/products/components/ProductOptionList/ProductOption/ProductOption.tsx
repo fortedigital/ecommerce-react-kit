@@ -19,13 +19,12 @@ export default function ProductOption({
 
   return (
     <div className={className}>
-      {/* TODO: Translation key */}
-      <dt className={styles.title}>{translate('size')}</dt>
+      <dt className={styles.title}>{translate(option.id)}</dt>
       <dd>
         <List className={styles.values} items={option.values}>
           {(item) => (
             <List.Item key={item}>
-              <ProductOptionChoice optionId={option.id} value={item} />
+              <ProductOptionChoice parentId={option.id} value={item} />
             </List.Item>
           )}
         </List>

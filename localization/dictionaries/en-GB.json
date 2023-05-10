@@ -14,10 +14,6 @@
     "noItems": "There are no items in your cart",
     "toCatalog": "Go shopping"
   },
-  "cartItem": {
-    "delete": "Delete item",
-    "quantity": "Quantity"
-  },
   "cartLink": {
     "count": "Cart: {count, plural, =1 {# item} other {# items}}"
   },
@@ -120,6 +116,13 @@
     },
     "products": "Popular products",
     "toProducts": "Explore all products"
+  },
+  "lineItem": {
+    "delete": "Delete item",
+    "quantity": "Quantity"
+  },
+  "lineItemOptions": {
+    "size": "Size: {size}"
   },
   "lineItems": {
     "product": "Product",

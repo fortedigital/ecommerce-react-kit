@@ -8,13 +8,13 @@ import styles from './ProductOptionChoice.module.css';
 type ProductOptionChoiceProps = ProductOptionChoiceData;
 
 export default function ProductOptionChoice({
-  optionId,
+  parentId,
   value,
 }: ProductOptionChoiceProps) {
   const { pathname, searchParams } = useRouter();
-  const href = buildProductUrl(pathname, searchParams, [{ optionId, value }]);
-  const isChosen = searchParams.get(optionId) === value;
-  
+  const href = buildProductUrl(pathname, searchParams, [{ parentId, value }]);
+  const isChosen = searchParams.get(parentId) === value;
+
   return (
     <Link
       className={styles.root}

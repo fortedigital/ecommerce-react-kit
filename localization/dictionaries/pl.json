@@ -14,10 +14,6 @@
     "noItems": "Brak produktów w koszyku",
     "toCatalog": "Rozpocznij zakupy"
   },
-  "cartItem": {
-    "delete": "Usuń produkt",
-    "quantity": "Liczba sztuk"
-  },
   "cartLink": {
     "count": "Koszyk: {count, plural, =1 {# produkt} few {# produkty} other {# produktów}}"
   },
@@ -120,6 +116,13 @@
     },
     "products": "Popularne produkty",
     "toProducts": "Odkryj pozostałe produkty"
+  },
+  "lineItem": {
+    "delete": "Usuń produkt",
+    "quantity": "Liczba sztuk"
+  },
+  "lineItemOptions": {
+    "size": "Rozmiar: {size}"
   },
   "lineItems": {
     "product": "Produkt",

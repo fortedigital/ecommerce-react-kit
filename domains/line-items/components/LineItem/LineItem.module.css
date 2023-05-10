@@ -9,10 +9,6 @@
   & .title {
     margin-bottom: 0;
   }
-  
-  & .options {
-    color: var(--color-text-light);
-  }
 
   & .thumbnail {
     grid-column: 1;
