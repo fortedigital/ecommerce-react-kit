@@ -23,8 +23,8 @@ export default function Cart() {
     await deleteItem({ itemId });
   };
 
-  const handleQuantityChange = async (itemId: string, quantity: number) => {
-    if (quantity === 0) {
+  const handleQuantityChange = async (itemId: string, quantity: string) => {
+    if (Number(quantity) === 0) {
       await deleteItem({ itemId });
     } else {
       await updateItemQuantity({ itemId, quantity });

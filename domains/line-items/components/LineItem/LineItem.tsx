@@ -13,7 +13,7 @@ interface LineItemProps {
   item: LineItemData;
   isLoading?: boolean;
   onDeletion?: (itemId: string) => void;
-  onQuantityChange?: (itemId: string, quantity: number) => void;
+  onQuantityChange?: (itemId: string, quantity: string) => void;
 }
 
 export default function LineItem({
@@ -60,7 +60,7 @@ export default function LineItem({
               label={translate('quantity')}
               hideLabel
               onChange={(event) =>
-                onQuantityChange(item.id, Number(event.target.value))
+                onQuantityChange(item.id, event.target.value)
               }
               disabled={isLoading}
             />
