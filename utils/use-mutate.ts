@@ -2,21 +2,26 @@
 
 import fetcher from './fetcher';
 
-export default function useMutate<TInput, TOutput>(
-  url: string,
-  options: { method: 'DELETE' | 'PATCH' | 'POST' | 'PUT' }
-) {
+export default function useMutate<
+  TInput extends Record<string, string>,
+  TOutput
+>(url: string, options: { method: 'DELETE' | 'PATCH' | 'POST' | 'PUT' }) {
   return useSWRMutation(
     url,
-    (url, { arg }: { arg: TInput }) =>
-      fetcher<TOutput>(url, {
+    (url, { arg }: { arg: TInput }) => {
+      let body, query;
+
+      if (options.method === 'DELETE') {
+        query = new URLSearchParams(arg).toString();
+      } else {
+        body = JSON.stringify(arg);
+      }
+
+      return fetcher<TOutput>(query ? `${url}?${query}` : url, {
         method: options.method,
-        // headers: {
-        //   Accept: 'application/json',
-        //   'Content-Type': 'application/json',
-        // },
-        body: JSON.stringify(arg),
-      }),
+        body,
+      });
+    },
     { populateCache: true, revalidate: false }
   );
 }
