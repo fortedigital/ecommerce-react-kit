@@ -13,7 +13,7 @@ import {
 import useDictionary from '../../localization/use-dictionary';
 import { useRouter } from '../../platform';
 import { ProductData } from '../../types/models';
-import { Heading, Image, Markup } from '../../ui';
+import { Gallery, Heading, Markup } from '../../ui';
 
 import styles from './Product.module.css';
 
@@ -35,7 +35,6 @@ export default function Product({ product }: ProductProps) {
   );
   const activeVariantOrProduct = activeVariant ?? product;
   const description = activeVariant?.description ?? product.description;
-  const image = activeVariant?.image ?? product.image;
 
   useInitProductOptionChoicesInUrl(router, optionChoices, activeVariant);
 
@@ -70,18 +69,11 @@ export default function Product({ product }: ProductProps) {
           </>
         )}
       </div>
-      <div className={clsx('col-span-6', styles.imageContainer)}>
-        {image && (
-          <Image
-            className={styles.image}
-            src={image.src}
-            alt={image.alt}
-            height={900}
-            width={900}
-            preload
-          />
-        )}
-      </div>
+      <Gallery
+        className={clsx('col-span-6', styles.gallery)}
+        title={translate('gallery')}
+        images={product.images}
+      />
     </article>
   );
 }

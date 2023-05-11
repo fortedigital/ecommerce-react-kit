@@ -1,3 +1,8 @@
-﻿.rounded {
+﻿.root {
+  max-width: 100%;
+  height: auto;
+}
+
+.rounded {
   border-radius: var(--border-radius);
 }

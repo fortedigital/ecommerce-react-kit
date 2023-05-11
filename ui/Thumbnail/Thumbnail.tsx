@@ -1,10 +1,10 @@
 ﻿import clsx from 'clsx';
 
-import Image from '../Image';
+import Image, { ImageProps } from '../Image';
 
 import styles from './Thumbnail.module.css';
 
-type ThumbnailProps = React.ComponentPropsWithoutRef<typeof Image>;
+type ThumbnailProps = Omit<ImageProps, 'rounded'>;
 
 export default function Thumbnail({
   alt,

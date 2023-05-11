@@ -1,0 +1,10 @@
+﻿.root {
+  border: var(--border-regular);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.image {
+  height: 8.8rem;
+  width: auto;
+}

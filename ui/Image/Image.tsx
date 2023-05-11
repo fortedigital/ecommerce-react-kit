@@ -17,7 +17,7 @@ export default function Image({
 }: ImageProps) {
   return (
     <ImageElement
-      className={clsx({ [styles.rounded]: rounded }, className)}
+      className={clsx(styles.root, { [styles.rounded]: rounded }, className)}
       preload={preload}
       {...props}
     />

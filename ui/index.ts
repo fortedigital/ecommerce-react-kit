@@ -3,6 +3,7 @@ export { default as Button } from './Button';
 export { default as Card } from './Card';
 export { default as Fieldset } from './Fieldset';
 export { default as Form } from './Form';
+export { default as Gallery } from './Gallery';
 export type { HeadingLevel } from './Heading';
 export { default as Heading } from './Heading';
 export { default as Hero } from './Hero';

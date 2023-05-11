@@ -78,7 +78,7 @@ export interface ProductData extends EntityData {
   description?: string;
   discounted?: boolean;
   discountPercent?: number;
-  image?: ImageData;
+  images: ImageData[];
   originalPrice?: PriceData;
   price?: PriceData;
 }
@@ -110,7 +110,6 @@ export interface ProductVariantData extends EntityData {
   description?: string;
   discounted?: boolean;
   discountPercent?: number;
-  image?: ImageData;
   originalPrice?: PriceData;
   price?: PriceData;
 }
