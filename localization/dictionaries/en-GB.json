@@ -99,12 +99,13 @@
     }
   },
   "checkoutSummary": {
-    "title": "Checkout summary",
     "cart": "Cart",
     "deliveryCost": "Delivery cost",
     "discount": "Discount",
     "quantity": "Qty. {count}",
+    "size": "Size: {size}",
     "subtotal": "Subtotal",
+    "title": "Checkout summary",
     "toPayment": "Order & pay",
     "toShippingMethod": "Pick shipping method",
     "total": "Total"

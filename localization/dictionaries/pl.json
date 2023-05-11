@@ -99,12 +99,13 @@
     }
   },
   "checkoutSummary": {
-    "title": "Podsumowanie",
     "cart": "Koszyk",
     "deliveryCost": "Koszt dostawy",
     "discount": "Rabat",
-    "quantity": "{{count}} szt.",
+    "quantity": "{count} szt.",
+    "size": "Rozmiar: {size}",
     "subtotal": "Wartość koszyka",
+    "title": "Podsumowanie",
     "toPayment": "Zamów i zapłać",
     "toShippingMethod": "Wybierz formę dostawy",
     "total": "Do zapłaty"

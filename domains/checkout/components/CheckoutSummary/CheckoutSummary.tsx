@@ -49,7 +49,13 @@ export default function CheckoutSummary({
                         {item.name}
                       </Link>
                     </Heading>
-                    <span>{item.options.map((x) => x.value).join(' | ')}</span>
+                    <p>
+                      {item.options
+                        .map((x) =>
+                          translate(x.parentId, { [x.parentId]: x.value })
+                        )
+                        .join(' | ')}
+                    </p>
                   </div>
                   {item.image && (
                     <Thumbnail
