@@ -6,11 +6,11 @@ import ShippingOption from '../ShippingOption';
 import useDictionary from '../../../../localization/use-dictionary';
 import { ShippingOptionData } from '../../../../types/models';
 import { Fieldset, Form, Input, Radio, RadioGroup } from '../../../../ui';
-import { useForm } from '../../../../utils';
 import {
   emailValidationRule,
   requiredValidationRule,
-} from '../../../../utils/validation-rules';
+  useForm,
+} from '../../../../utils';
 
 export type CheckoutFormValues = {
   contact: {

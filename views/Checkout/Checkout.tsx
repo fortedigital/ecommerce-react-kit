@@ -1,18 +1,18 @@
 ﻿import { useState } from 'react';
 
-import { CheckoutFormValues } from '../..//domains/checkout/components/CheckoutForm';
 import { CartEmpty } from '../../domains/cart/components';
 import { useCart } from '../../domains/cart/hooks';
 import {
   CheckoutForm,
   CheckoutSummary,
 } from '../../domains/checkout/components';
+import { CheckoutFormValues } from '../../domains/checkout/components/CheckoutForm';
 import useCheckout from '../../domains/checkout/hooks/use-checkout';
 import useDictionary from '../../localization/use-dictionary';
 import { useRouter } from '../../platform';
 import { ShippingOptionData } from '../../types/models';
 import { Heading, Loader } from '../../ui';
-import useSubmitFormRemotely from '../../utils/use-submit-form-remotely';
+import { useSubmitFormRemotely } from '../../utils';
 
 interface CheckoutProps {
   shippingOptions: ShippingOptionData[];

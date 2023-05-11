@@ -1,7 +1,7 @@
 ﻿import { useCallback } from 'react';
 
 import { CartData, CheckoutData, OrderData } from '../../../types/models';
-import fetcher from '../../../utils/fetcher';
+import { fetcher } from '../../../utils';
 import { CheckoutFormValues } from '../components/CheckoutForm';
 
 export default function useCheckout() {
