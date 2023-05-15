@@ -10,15 +10,19 @@ import { CheckoutFormValues } from '../../domains/checkout/components/CheckoutFo
 import useCheckout from '../../domains/checkout/hooks/use-checkout';
 import useDictionary from '../../localization/use-dictionary';
 import { useRouter } from '../../platform';
-import { ShippingOptionData } from '../../types/models';
+import { PaymentMethodData, ShippingOptionData } from '../../types/models';
 import { Heading, Loader } from '../../ui';
 import { useSubmitFormRemotely } from '../../utils';
 
 interface CheckoutProps {
+  paymentMethods: PaymentMethodData[];
   shippingOptions: ShippingOptionData[];
 }
 
-export default function Checkout({ shippingOptions }: CheckoutProps) {
+export default function Checkout({
+  paymentMethods,
+  shippingOptions,
+}: CheckoutProps) {
   const translate = useDictionary('checkout');
   const router = useRouter();
   const { cart, isLoading, count, refreshCart } = useCart();
@@ -63,6 +67,7 @@ export default function Checkout({ shippingOptions }: CheckoutProps) {
           <CheckoutForm
             ref={formRef}
             className="col-span-8"
+            paymentMethods={paymentMethods}
             shippingOptions={shippingOptions}
             onShippingOptionChange={handleShippingMethodChange}
             onSubmit={handleSubmit}

@@ -33,7 +33,7 @@
   },
   "checkoutForm": {
     "contact": {
-      "title": "Contact details",
+      "title": "Contact",
       "fields": {
         "email": {
           "label": "Email address",
@@ -63,7 +63,7 @@
       }
     },
     "delivery": {
-      "title": "Delivery details",
+      "title": "Delivery",
       "fields": {
         "addressLine": {
           "label": "Address line",
@@ -93,6 +93,17 @@
           "label": "Shipping method",
           "errors": {
             "required": "Please pick a shipping method."
+          }
+        }
+      }
+    },
+    "payment": {
+      "title": "Payment",
+      "fields": {
+        "paymentMethod": {
+          "label": "Payment method",
+          "errors": {
+            "required": "Please pick a payment method."
           }
         }
       }

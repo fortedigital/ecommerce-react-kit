@@ -4,7 +4,10 @@ import clsx from 'clsx';
 import ShippingOption from '../ShippingOption';
 
 import useDictionary from '../../../../localization/use-dictionary';
-import { ShippingOptionData } from '../../../../types/models';
+import {
+  PaymentMethodData,
+  ShippingOptionData,
+} from '../../../../types/models';
 import { Fieldset, Form, Input, Radio, RadioGroup } from '../../../../ui';
 import {
   emailValidationRule,
@@ -26,18 +29,26 @@ export type CheckoutFormValues = {
     country: string;
     shippingMethod: string;
   };
+  paymentMethod: string;
 };
 
 interface CheckoutFormProps {
   onShippingOptionChange: (name: string) => void;
   onSubmit: (data: CheckoutFormValues) => void;
+  paymentMethods: PaymentMethodData[];
   shippingOptions: ShippingOptionData[];
   className?: string;
 }
 
 const CheckoutForm = forwardRef<HTMLFormElement, CheckoutFormProps>(
   function CheckoutForm(
-    { className, onShippingOptionChange, onSubmit, shippingOptions },
+    {
+      className,
+      onShippingOptionChange,
+      onSubmit,
+      paymentMethods,
+      shippingOptions,
+    },
     ref
   ) {
     const translate = useDictionary('checkoutForm');
@@ -49,7 +60,7 @@ const CheckoutForm = forwardRef<HTMLFormElement, CheckoutFormProps>(
         className={clsx('grid-m gap-row-m', className)}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <Fieldset name="contact" className="grid-s gap-row-s col-span-full">
+        <Fieldset className="grid-s gap-row-s col-span-full">
           <Fieldset.Legend>{translate('contact.title')}</Fieldset.Legend>
           <Input
             className="col-span-6"
@@ -104,7 +115,7 @@ const CheckoutForm = forwardRef<HTMLFormElement, CheckoutFormProps>(
           />
         </Fieldset>
 
-        <Fieldset name="delivery" className="grid-s gap-row-s col-span-full">
+        <Fieldset className="grid-s gap-row-s col-span-full">
           <Fieldset.Legend>{translate('delivery.title')}</Fieldset.Legend>
           <Input
             className="col-span-full"
@@ -176,6 +187,31 @@ const CheckoutForm = forwardRef<HTMLFormElement, CheckoutFormProps>(
                     ),
                   })}
                   key={option.methodName}
+                />
+              ))}
+            </div>
+          </RadioGroup>
+        </Fieldset>
+        <Fieldset className="grid-s gap-row-s col-span-full">
+          <Fieldset.Legend>{translate('payment.title')}</Fieldset.Legend>
+          <RadioGroup
+            className="col-span-full"
+            title={translate('payment.fields.paymentMethod.label')}
+            error={errors.paymentMethod?.message}
+            required
+          >
+            <div className="grid-xs gap-row-xs">
+              {paymentMethods.map((method) => (
+                <Radio
+                  className="col-span-6"
+                  label={method.name}
+                  value={method.id}
+                  {...register('paymentMethod', {
+                    required: requiredValidationRule(
+                      translate('payment.fields.paymentMethod.errors.required')
+                    ),
+                  })}
+                  key={method.id}
                 />
               ))}
             </div>

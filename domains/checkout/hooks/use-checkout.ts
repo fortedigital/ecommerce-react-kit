@@ -11,6 +11,11 @@ export default function useCheckout() {
       const data: CheckoutData = {
         cartId: cart.id,
         contact: form.contact,
+        payment: {
+          amount: cart.subtotal.amount,
+          currencyCode: cart.subtotal.currencyCode,
+          paymentMethodName: form.paymentMethod,
+        },
         shipment: {
           address: { ...form.contact, ...address },
           shippingMethodName: shippingMethod,

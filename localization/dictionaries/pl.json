@@ -95,6 +95,17 @@
             "required": "Wybierz formę dostawy."
           }
         }
+      },
+      "payment": {
+        "title": "Płatność",
+        "fields": {
+          "paymentMethod": {
+            "label": "Sposób płatności",
+            "errors": {
+              "required": "Wybierz sposób płatności."
+            }
+          }
+        }
       }
     }
   },

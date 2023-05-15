@@ -26,6 +26,7 @@ export interface CartData extends EntityData {
 export interface CheckoutData {
   cartId: string;
   contact: Required<Omit<CustomerData, 'fullName' | 'id' | 'address'>>;
+  payment: PaymentData;
   shipment: ShipmentData;
 }
 
@@ -64,6 +65,18 @@ export interface OrderData extends EntityData {
   subtotal: PriceData;
   discount: PriceData;
   total: PriceData;
+}
+
+export interface PaymentData {
+  amount: number;
+  currencyCode: string;
+  paymentMethodName: string;
+  transactionType?: string;
+}
+
+export interface PaymentMethodData {
+  id: string;
+  name: string;
 }
 
 export interface PriceData {
