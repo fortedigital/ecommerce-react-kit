@@ -31,6 +31,13 @@
   "checkout": {
     "title": "Checkout"
   },
+  "checkoutCostSummary": {
+    "deliveryCost": "Delivery cost",
+    "discount": "Discount",
+    "subtotal": "Subtotal",
+    "toShippingMethod": "Pick shipping method",
+    "total": "Total"
+  },
   "checkoutForm": {
     "contact": {
       "title": "Contact",
@@ -109,17 +116,14 @@
       }
     }
   },
-  "checkoutSummary": {
+  "checkoutLineItems": {
     "cart": "Cart",
-    "deliveryCost": "Delivery cost",
-    "discount": "Discount",
     "quantity": "Qty. {count}",
-    "size": "Size: {size}",
-    "subtotal": "Subtotal",
+    "size": "Size: {size}"
+  },
+  "checkoutSummary": {
     "title": "Checkout summary",
-    "toPayment": "Order & pay",
-    "toShippingMethod": "Pick shipping method",
-    "total": "Total"
+    "toPayment": "Order & pay"
   },
   "home": {
     "hero": {
@@ -158,14 +162,15 @@
     "total": "Total"
   },
   "product": {
+    "discount": "{percent}% off",
     "gallery": "Gallery",
     "toCart": "Add to cart"
   },
   "productCard": {
-    "toProduct": "Go to product"
+    "discount": "{percent}% off"
   },
   "productOption": {
-    "size": "Choose your size"
+    "size": "Size"
   },
   "productPrice": {
     "discount": "{percent}% off"

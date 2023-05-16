@@ -10,7 +10,7 @@ interface HeadingProps {
   level: HeadingLevel;
   className?: string;
   position?: 'left' | 'center' | 'right';
-  size?: 'xxs' | 'xs' | 's' | 'm' | 'l' | 'xl';
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
   visuallyHidden?: boolean;
 }
 
@@ -28,7 +28,6 @@ export default function Heading({
       className: clsx(
         css.root,
         {
-          [css.extraExtraSmall]: size === 'xxs',
           [css.extraSmall]: size === 'xs',
           [css.small]: size === 's',
           [css.medium]: size === 'm',

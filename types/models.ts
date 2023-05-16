@@ -86,12 +86,13 @@ export interface PriceData {
 
 export interface ProductData extends EntityData {
   name: string;
+  discounted: boolean;
+  forSale: boolean;
+  images: ImageData[];
   options: ProductOptionData[];
   variants: ProductVariantData[];
   description?: string;
-  discounted?: boolean;
   discountPercent?: number;
-  images: ImageData[];
   originalPrice?: PriceData;
   price?: PriceData;
 }
@@ -99,7 +100,6 @@ export interface ProductData extends EntityData {
 export interface ProductListItemData extends EntityData {
   name: string;
   url: string;
-  description?: string;
   discounted?: boolean;
   discountPercent?: number;
   image?: ImageData;
@@ -119,9 +119,10 @@ export interface ProductOptionChoiceData {
 
 export interface ProductVariantData extends EntityData {
   name: string;
+  discounted: boolean;
+  forSale: boolean;
   options: ProductOptionChoiceData[];
   description?: string;
-  discounted?: boolean;
   discountPercent?: number;
   originalPrice?: PriceData;
   price?: PriceData;

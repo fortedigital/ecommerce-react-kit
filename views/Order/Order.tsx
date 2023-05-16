@@ -34,13 +34,13 @@ export default function Page({ order }: OrderProps) {
         </div>
         <div className="col-span-3">
           <Box className={styles.details} theme="light">
-            <Heading level={2} size="xxs">
+            <Heading level={2} size="s">
               {translate('contactDetails')}
             </Heading>
             <Address address={order.customer} />
           </Box>
           <Box className={styles.details} theme="dark">
-            <Heading level={2} size="xxs">
+            <Heading level={2} size="s">
               {translate('deliveryAddress')}
             </Heading>
             <Address address={order.deliveryAddress} />

@@ -9,6 +9,6 @@
 
   &.light {
     background-color: var(--color-grey-100);
-    border: var(--border-regular);
+    border: var(--border-regular-light);
   }
 }

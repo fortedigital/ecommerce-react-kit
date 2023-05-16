@@ -18,7 +18,7 @@ export default function Home({ products }: HomeProps) {
         </Link>
       </Hero>
       <section>
-        <Heading level={2} size="s">
+        <Heading level={2} size="m">
           {translate('products')}
         </Heading>
         <ProductList level={2} products={products} />

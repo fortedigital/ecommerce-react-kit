@@ -6,7 +6,6 @@
 .title {
   margin: 0 0 var(--size);
   font-weight: var(--font-weight-regular);
-  color: var(--color-text-light);
 }
 
 .error {

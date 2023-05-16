@@ -4,7 +4,15 @@ import LineItemOptions from './LineItemOptions';
 
 import useDictionary from '../../../../localization/use-dictionary';
 import { LineItemData } from '../../../../types/models';
-import { Button, Heading, Input, Link, Price, Thumbnail } from '../../../../ui';
+import {
+  Button,
+  Heading,
+  Input,
+  Link,
+  Price,
+  PriceWithDiscount,
+  Thumbnail,
+} from '../../../../ui';
 import { Trash } from '../../../../ui/icons';
 
 import styles from './LineItem.module.css';
@@ -28,7 +36,7 @@ export default function LineItem({
     <>
       <td className={clsx(styles.value, styles.info)}>
         <div>
-          <Heading className={styles.title} level={2} size="xxs">
+          <Heading className={styles.title} level={2}>
             <Link href={item.url}>{item.name}</Link>
           </Heading>
           <LineItemOptions options={item.options} />
@@ -82,17 +90,15 @@ export default function LineItem({
       )}
 
       <td className={styles.value}>
-        {item.discounted && (
-          <Price
-            className={styles.originalPrice}
-            amount={item.originalPrice.amount}
-            currencyCode={item.originalPrice.currencyCode}
-          />
-        )}
-        <Price
+        <PriceWithDiscount
           className={styles.price}
           amount={item.price.amount}
           currencyCode={item.price.currencyCode}
+          originalAmount={
+            item.discounted ? item.originalPrice.amount : undefined
+          }
+          direction="column"
+          size="s"
         />
       </td>
     </>

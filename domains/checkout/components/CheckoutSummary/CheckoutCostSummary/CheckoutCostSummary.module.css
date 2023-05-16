@@ -1,0 +1,23 @@
+﻿.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap-extra-small);
+  padding: var(--gap-extra-small) 0;
+  border-bottom: var(--border-regular-dark);
+  font-size: var(--font-size-s);
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.totalPrice {
+  font-size: var(--font-size-m);
+}

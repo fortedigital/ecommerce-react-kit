@@ -5,9 +5,9 @@
   justify-content: stretch;
   width: 100%;
   padding: var(--size-3x);
-  border: var(--border-regular);
+  border: var(--border-regular-light);
   border-radius: var(--border-radius);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   cursor: pointer;
 
   @nest fieldset[aria-invalid="true"] & {

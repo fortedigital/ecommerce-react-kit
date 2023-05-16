@@ -75,13 +75,7 @@
   }
 
   &.medium {
-    min-height: 5.5rem;
-    padding: var(--size) var(--size-4x);
-  }
-
-  &.large {
-    min-height: 7.2rem;
-    padding: var(--size) var(--size-4x);
-    font-size: 2rem;
+    min-height: 6rem;
+    padding: var(--size) var(--size-6x);
   }
 }

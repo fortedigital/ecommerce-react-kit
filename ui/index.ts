@@ -14,6 +14,7 @@ export { default as List } from './List';
 export { default as Loader } from './Loader';
 export { default as Markup } from './Markup';
 export { default as Price } from './Price';
+export { default as PriceWithDiscount } from './PriceWithDiscount';
 export { default as Radio } from './Radio';
 export { default as RadioGroup } from './RadioGroup';
 export { default as Thumbnail } from './Thumbnail';

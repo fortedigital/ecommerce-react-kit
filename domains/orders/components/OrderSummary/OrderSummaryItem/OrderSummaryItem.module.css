@@ -4,19 +4,19 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--size-2x) var(--size-3x);
-  border-top: var(--border-regular);
-  font-size: var(--font-size-small);
+  border-top: var(--border-regular-light);
+  font-size: var(--font-size-s);
 
   &:nth-child(odd) {
     background-color: var(--color-grey-100);
   }
 
   &:last-child {
-    border-bottom: var(--border-regular);
+    border-bottom: var(--border-regular-light);
   }
   
   & .label {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-s);
   }
   
   & .value {

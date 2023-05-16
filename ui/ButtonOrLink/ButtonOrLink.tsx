@@ -7,7 +7,7 @@ export interface ButtonOrLinkProps {
   className?: string;
   color?: 'accent' | 'primary' | 'secondary';
   fullWidth?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium';
   variant?: 'solid' | 'outline' | 'ghost' | 'underlined';
 }
 
@@ -32,7 +32,6 @@ export default function ButtonOrLink({
           [styles.underlined]: variant === 'underlined',
           [styles.small]: size === 'small',
           [styles.medium]: size === 'medium',
-          [styles.large]: size === 'large',
           [styles.colorAccent]: color === 'accent',
           [styles.colorPrimary]: color === 'primary',
           [styles.colorSecondary]: color === 'secondary',

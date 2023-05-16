@@ -14,7 +14,7 @@
   align-items: center;
   justify-items: center;
   padding: var(--gap-small);
-  border-bottom: var(--border-regular);
+  border-bottom: var(--border-regular-light);
 
   &.header {
     padding-block: 0 var(--gap-extra-small);
@@ -27,6 +27,6 @@
 
 .heading {
   padding: 0;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   font-weight: var(--font-weight-medium);
 }

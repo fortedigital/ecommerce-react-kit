@@ -17,42 +17,33 @@ export default function CartSummary({ className, cart }: CartSummaryProps) {
       <Heading level={2} visuallyHidden>
         {translate('title')}
       </Heading>
-      <dl>
-        <dt className={styles.priceLabel}>{translate('subtotal')}</dt>
-        <dd className={styles.price}>
+      <p className={styles.currentPrice}>
+        <span className={styles.priceLabel}>{translate('subtotal')}</span>
+        <Price
+          className={styles.priceValue}
+          amount={cart.subtotal.amount}
+          currencyCode={cart.subtotal.currencyCode}
+          total
+        />
+      </p>
+      {cart.discounted && (
+        <p className={styles.oldPrice}>
+          <span className={styles.discount}>
+            {translate('discount')}{' '}
+            <Price
+              amount={cart.discount.amount}
+              currencyCode={cart.discount.currencyCode}
+            />
+          </span>
+          {translate('originalPrice')}{' '}
           <Price
-            amount={cart.subtotal.amount}
-            currencyCode={cart.subtotal.currencyCode}
-            total
+            amount={cart.subtotalWithoutDiscount.amount}
+            currencyCode={cart.subtotalWithoutDiscount.currencyCode}
           />
-        </dd>
-        {cart.discounted && (
-          <>
-            <div className={styles.discount}>
-              <dt>{translate('discount')}</dt>
-              <dd>
-                <Price
-                  amount={cart.discount.amount}
-                  currencyCode={cart.discount.currencyCode}
-                />
-              </dd>
-            </div>
-
-            <div className={styles.originalPrice}>
-              <dt>{translate('originalPrice')}</dt>
-              <dd>
-                <Price
-                  amount={cart.subtotalWithoutDiscount.amount}
-                  currencyCode={cart.subtotalWithoutDiscount.currencyCode}
-                />
-              </dd>
-            </div>
-          </>
-        )}
-      </dl>
+        </p>
+      )}
       <p className={styles.disclaimer}>{translate('deliveryCharge')}</p>
       <Link
-        className={styles.link}
         href="/checkout"
         color="accent"
         size="medium"

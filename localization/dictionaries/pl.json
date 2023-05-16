@@ -31,6 +31,13 @@
   "checkout": {
     "title": "Kasa"
   },
+  "checkoutCostSummary": {
+    "deliveryCost": "Koszt dostawy",
+    "discount": "Rabat",
+    "subtotal": "Wartość koszyka",
+    "toShippingMethod": "Wybierz formę dostawy",
+    "total": "Do zapłaty"
+  },
   "checkoutForm": {
     "contact": {
       "title": "Dane kontaktowe",
@@ -109,17 +116,14 @@
       }
     }
   },
-  "checkoutSummary": {
+  "checkoutLineItems": {
     "cart": "Koszyk",
-    "deliveryCost": "Koszt dostawy",
-    "discount": "Rabat",
     "quantity": "{count} szt.",
-    "size": "Rozmiar: {size}",
-    "subtotal": "Wartość koszyka",
+    "size": "Rozmiar: {size}"
+  },
+  "checkoutSummary": {
     "title": "Podsumowanie",
-    "toPayment": "Zamów i zapłać",
-    "toShippingMethod": "Wybierz formę dostawy",
-    "total": "Do zapłaty"
+    "toPayment": "Zamów i zapłać"
   },
   "home": {
     "hero": {
@@ -158,14 +162,15 @@
     "total": "Do zapłaty"
   },
   "product": {
+    "discount": "-{percent}%",
     "gallery": "Galeria",
     "toCart": "Dodaj do koszyka"
   },
   "productCard": {
-    "toProduct": "Przejdź do produktu"
+    "discount": "-{percent}%"
   },
   "productOption": {
-    "size": "Wybierz swój rozmiar"
+    "size": "Rozmiar"
   },
   "productPrice": {
     "discount": "-{percent}%"

@@ -8,6 +8,8 @@
 
   & .title {
     margin-bottom: 0;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-medium);
   }
 
   & .thumbnail {
@@ -17,7 +19,7 @@
 
 .value {
   padding: 0;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
 
   &.quantity {
     display: flex;
@@ -26,18 +28,7 @@
     padding-left: var(--size-2x);
   }
 
-  & .originalPrice {
-    display: block;
-    font-size: var(--font-size-extra-small);
-    color: var(--color-text-light);
-    line-height: 1;
-    text-decoration: line-through;
-    text-align: right;
-  }
-
   & .price {
-    font-size: var(--font-size-regular);
-    font-weight: var(--font-weight-semi-bold);
-    line-height: 1;
+    text-align: right;
   }
 }

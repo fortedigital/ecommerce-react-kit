@@ -1,36 +1,37 @@
-﻿import ProductPrice from '../ProductPrice';
-
-import useDictionary from '../../../../localization/use-dictionary';
+﻿import useDictionary from '../../../../localization/use-dictionary';
 import { ProductListItemData } from '../../../../types/models';
-import { Card, HeadingLevel } from '../../../../ui';
-
-import styles from './ProductCard.module.css';
+import { Card, HeadingLevel, PriceWithDiscount } from '../../../../ui';
 
 interface ProductCardProps {
-  product: ProductListItemData;
   level: HeadingLevel;
+  product: ProductListItemData;
 }
 
 export default function ProductCard({ level, product }: ProductCardProps) {
   const translate = useDictionary('productCard');
+  const badge =
+    product.discounted &&
+    translate('discount', { percent: product.discountPercent });
 
   return (
     <Card
       level={level}
       title={product.name}
-      description={product.description}
+      badge={badge}
       image={product.image}
-      label={translate('toProduct')}
       href={product.url}
     >
-      <ProductPrice
-        className={styles.price}
-        discounted={product.discounted}
-        discountPercent={product.discountPercent}
-        originalPrice={product.originalPrice}
-        price={product.price}
-        size="m"
-      />
+      {product.price && (
+        <PriceWithDiscount
+          amount={product.price.amount}
+          currencyCode={product.price.currencyCode}
+          originalAmount={
+            product.discounted ? product.originalPrice?.amount : undefined
+          }
+          position="center"
+          size="m"
+        />
+      )}
     </Card>
   );
 }

@@ -6,7 +6,7 @@
 
 .legend {
   margin: 0 0 var(--size-3x);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-s);
   font-weight: var(--font-weight-medium);
 
   & .required {

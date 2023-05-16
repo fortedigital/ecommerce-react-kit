@@ -5,10 +5,12 @@ import { useAddItem } from '../../hooks';
 interface AddToCartButtonProps {
   children: React.ReactNode;
   itemId: string;
+  className?: string;
 }
 
 export default function AddToCartButton({
   children,
+  className,
   itemId,
 }: AddToCartButtonProps) {
   const { addItem } = useAddItem();
@@ -21,9 +23,10 @@ export default function AddToCartButton({
 
   return (
     <Button
+      className={className}
       type="button"
       color="primary"
-      size="large"
+      size="medium"
       variant="solid"
       onClick={handleClick}
     >
