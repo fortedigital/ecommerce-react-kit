@@ -3,6 +3,7 @@
 import LineItemOptions from './LineItemOptions';
 
 import useDictionary from '../../../../localization/use-dictionary';
+import { useRouter } from '../../../../platform';
 import { LineItemData } from '../../../../types/models';
 import {
   Button,
@@ -31,13 +32,14 @@ export default function LineItem({
   onQuantityChange,
 }: LineItemProps) {
   const translate = useDictionary('lineItem');
+  const { routes } = useRouter();
 
   return (
     <>
       <td className={clsx(styles.value, styles.info)}>
         <div>
           <Heading className={styles.title} level={2}>
-            <Link href={item.url}>{item.name}</Link>
+            <Link href={routes.product(item.productId)}>{item.name}</Link>
           </Heading>
           <LineItemOptions options={item.options} />
         </div>

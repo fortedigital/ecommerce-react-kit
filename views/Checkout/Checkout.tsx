@@ -50,7 +50,7 @@ export default function Checkout({
 
     const order = await submitCheckout(cart, values);
     await refreshCart();
-    router.push(`/orders/${order.id}`);
+    router.push(router.routes.order(order.id));
   };
 
   return (

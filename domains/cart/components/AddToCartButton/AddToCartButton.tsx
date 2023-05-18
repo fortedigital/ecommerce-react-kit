@@ -18,7 +18,7 @@ export default function AddToCartButton({
 
   const handleClick = async () => {
     await addItem({ itemId });
-    router.push('/cart');
+    router.push(router.routes.cart);
   };
 
   return (

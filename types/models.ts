@@ -53,7 +53,6 @@ export interface LineItemData extends EntityData {
   originalPrice: PriceData;
   discounted: boolean;
   price: PriceData;
-  url: string;
   image?: ImageData;
 }
 
@@ -99,7 +98,6 @@ export interface ProductData extends EntityData {
 
 export interface ProductListItemData extends EntityData {
   name: string;
-  url: string;
   discounted?: boolean;
   discountPercent?: number;
   image?: ImageData;
