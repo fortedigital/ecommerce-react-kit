@@ -3,8 +3,8 @@
 import { CartEmpty, CartSummary } from '../../domains/cart/components';
 import {
   useCart,
-  useDeleteItem,
-  useUpdateItemQuantity,
+  useDeleteFromCart,
+  useUpdateItemInCart,
 } from '../../domains/cart/hooks';
 import { LineItem, LineItems } from '../../domains/line-items/components';
 import useDictionary from '../../localization/use-dictionary';
@@ -15,19 +15,26 @@ import styles from './Cart.module.css';
 export default function Cart() {
   const translate = useDictionary('cart');
   const { cart, count, isLoading } = useCart();
-  const { deleteItem, isDeleting } = useDeleteItem();
-  const { updateItemQuantity, isUpdating } = useUpdateItemQuantity();
+  const { deleteFromCart, isDeleting } = useDeleteFromCart();
+  const { updateItemInCart, isUpdating } = useUpdateItemInCart();
   const isEmpty = !cart || count === 0;
 
   const handleDeletion = async (itemId: string) => {
-    await deleteItem({ itemId });
+    await deleteFromCart(itemId);
   };
 
   const handleQuantityChange = async (itemId: string, quantity: string) => {
-    if (Number(quantity) === 0) {
-      await deleteItem({ itemId });
-    } else {
-      await updateItemQuantity({ itemId, quantity });
+    const quantityNumeric = Number(quantity);
+
+    try {
+      if (quantityNumeric === 0) {
+        await deleteFromCart(itemId);
+      } else {
+        await updateItemInCart({ itemId, quantity: quantityNumeric });
+      }
+    } catch (error) {
+      // TODO: Handle an error in UI
+      console.error(error);
     }
   };
 

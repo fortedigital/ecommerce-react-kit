@@ -6,11 +6,14 @@ import {
   CheckoutForm,
   CheckoutSummary,
 } from '../../domains/checkout/components';
-import { CheckoutFormValues } from '../../domains/checkout/components/CheckoutForm';
 import useCheckout from '../../domains/checkout/hooks/use-checkout';
 import useDictionary from '../../localization/use-dictionary';
 import { useRouter } from '../../platform';
-import { PaymentMethodData, ShippingOptionData } from '../../types/models';
+import {
+  CheckoutFormData,
+  PaymentMethodData,
+  ShippingOptionData,
+} from '../../types/models';
 import { Heading, Loader } from '../../ui';
 import { useSubmitFormRemotely } from '../../utils';
 
@@ -43,14 +46,20 @@ export default function Checkout({
     setShippingOption(shippingOption);
   };
 
-  const handleSubmit = async (values: CheckoutFormValues) => {
+  const handleSubmit = async (values: CheckoutFormData) => {
     if (!cart) {
-      throw Error('Cart not found');
+      console.error('Cart not found');
+      return;
     }
 
-    const order = await submitCheckout(cart, values);
-    await refreshCart();
-    router.push(router.routes.order(order.id));
+    try {
+      const order = await submitCheckout(cart, values);
+      await refreshCart();
+      router.push(router.routes.order(order.id));
+    } catch (error) {
+      // TODO: Handle an error in UI
+      console.error(error);
+    }
   };
 
   return (

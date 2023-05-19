@@ -1,4 +1,4 @@
-﻿export { default as useAddItem } from './use-add-item';
+﻿export { default as useAddToCart } from './use-add-to-cart';
 export { default as useCart } from './use-cart';
-export { default as useDeleteItem } from './use-delete-item';
-export { default as useUpdateItemQuantity } from './use-update-item-quantity';
+export { default as useDeleteFromCart } from './use-delete-from-cart';
+export { default as useUpdateItemInCart } from './use-update-item-in-cart';

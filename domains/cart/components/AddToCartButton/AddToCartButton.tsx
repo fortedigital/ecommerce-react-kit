@@ -1,6 +1,6 @@
 ﻿import { useRouter } from '../../../../platform';
 import { Button } from '../../../../ui';
-import { useAddItem } from '../../hooks';
+import { useAddToCart } from '../../hooks';
 
 interface AddToCartButtonProps {
   children: React.ReactNode;
@@ -13,12 +13,17 @@ export default function AddToCartButton({
   className,
   itemId,
 }: AddToCartButtonProps) {
-  const { addItem } = useAddItem();
+  const { addToCart } = useAddToCart();
   const router = useRouter();
 
   const handleClick = async () => {
-    await addItem({ itemId });
-    router.push(router.routes.cart);
+    try {
+      await addToCart(itemId);
+      router.push(router.routes.cart);
+    } catch (error) {
+      // TODO: Handle an error in UI
+      console.error(error);
+    }
   };
 
   return (

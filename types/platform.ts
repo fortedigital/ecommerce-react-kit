@@ -1,5 +1,19 @@
 ﻿import { UrlObject } from 'url';
 
+import { CartData, CheckoutData, OrderData } from '@ecommerce-kit/types/models';
+
+export interface EcommerceClient {
+  cartAddItem(itemId: string): Promise<CartData | undefined>;
+
+  cartDeleteItem(itemId: string): Promise<CartData | undefined>;
+
+  cartGet(): Promise<CartData | undefined>;
+
+  cartUpdateItem(item: { itemId: string; quantity: number }): Promise<CartData | undefined>;
+
+  orderCreate(checkout: CheckoutData): Promise<OrderData | undefined>;
+}
+
 export interface Routes {
   cart: string;
   catalog: string;

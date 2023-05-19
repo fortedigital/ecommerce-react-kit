@@ -5,6 +5,7 @@ import ShippingOption from '../ShippingOption';
 
 import useDictionary from '../../../../localization/use-dictionary';
 import {
+  CheckoutFormData,
   PaymentMethodData,
   ShippingOptionData,
 } from '../../../../types/models';
@@ -15,26 +16,9 @@ import {
   useForm,
 } from '../../../../utils';
 
-export type CheckoutFormValues = {
-  contact: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-  };
-  delivery: {
-    addressLine: string;
-    postcode: string;
-    city: string;
-    country: string;
-    shippingMethod: string;
-  };
-  paymentMethod: string;
-};
-
 interface CheckoutFormProps {
   onShippingOptionChange: (name: string) => void;
-  onSubmit: (data: CheckoutFormValues) => void;
+  onSubmit: (data: CheckoutFormData) => void;
   paymentMethods: PaymentMethodData[];
   shippingOptions: ShippingOptionData[];
   className?: string;
@@ -52,7 +36,7 @@ const CheckoutForm = forwardRef<HTMLFormElement, CheckoutFormProps>(
     ref
   ) {
     const translate = useDictionary('checkoutForm');
-    const { errors, handleSubmit, register } = useForm<CheckoutFormValues>();
+    const { errors, handleSubmit, register } = useForm<CheckoutFormData>();
 
     return (
       <Form

@@ -1,30 +1,14 @@
 ﻿import { useCallback } from 'react';
 
-import { CartData, CheckoutData, OrderData } from '../../../types/models';
-import { fetcher } from '../../../utils';
-import { CheckoutFormValues } from '../components/CheckoutForm';
+import { client } from '../../../platform';
+import { CartData, CheckoutFormData } from '../../../types/models';
+import { composeCheckoutData } from '../utils';
 
 export default function useCheckout() {
   const submitCheckout = useCallback(
-    async (cart: CartData, form: CheckoutFormValues) => {
-      const { shippingMethod, ...address } = form.delivery;
-      const data: CheckoutData = {
-        cartId: cart.id,
-        contact: form.contact,
-        payment: {
-          amount: cart.subtotal.amount,
-          currencyCode: cart.subtotal.currencyCode,
-          paymentMethodName: form.paymentMethod,
-        },
-        shipment: {
-          address: { ...form.contact, ...address },
-          shippingMethodName: shippingMethod,
-        },
-      };
-      const order = await fetcher<OrderData>('/api/orders', {
-        method: 'POST',
-        body: JSON.stringify(data),
-      });
+    async (cart: CartData, form: CheckoutFormData) => {
+      const checkout = composeCheckoutData(cart, form);
+      const order = await client.orderCreate(checkout);
 
       if (!order) {
         throw Error('Order cannot be placed.');

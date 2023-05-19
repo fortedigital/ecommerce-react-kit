@@ -1,4 +1,33 @@
-﻿import { PriceData } from '../../types/models';
+﻿import {
+  CartData,
+  CheckoutData,
+  CheckoutFormData,
+  PriceData,
+} from '../../types/models';
+
+export function composeCheckoutData(
+  cart: CartData,
+  form: CheckoutFormData
+): CheckoutData {
+  const {
+    contact,
+    delivery: { shippingMethod, ...address },
+    paymentMethod,
+  } = form;
+
+  return {
+    cartId: cart.id,
+    contact,
+    payment: {
+      ...cart.subtotal,
+      paymentMethodName: paymentMethod,
+    },
+    shipment: {
+      address: { ...contact, ...address },
+      shippingMethodName: shippingMethod,
+    },
+  };
+}
 
 export function calculateTotal(...args: (PriceData | undefined)[]) {
   return args.reduce<PriceData>(

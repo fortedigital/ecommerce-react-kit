@@ -30,6 +30,23 @@ export interface CheckoutData {
   shipment: ShipmentData;
 }
 
+export interface CheckoutFormData {
+  contact: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string;
+  };
+  delivery: {
+    addressLine: string;
+    postcode: string;
+    city: string;
+    country: string;
+    shippingMethod: string;
+  };
+  paymentMethod: string;
+}
+
 export interface CustomerData extends EntityData {
   email?: string;
   firstName?: string;
