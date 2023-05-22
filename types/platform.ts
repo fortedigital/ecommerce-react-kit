@@ -1,6 +1,6 @@
 ﻿import { UrlObject } from 'url';
 
-import { CartData, CheckoutData, OrderData } from '@ecommerce-kit/types/models';
+import { CartData, CheckoutData, OrderData } from './models';
 
 export interface EcommerceClient {
   cartAddItem(itemId: string): Promise<CartData | undefined>;
