@@ -1,5 +1,4 @@
 ﻿import useDictionary from '../../../../localization/use-dictionary';
-import { useRouter } from '../../../../platform';
 import { ProductListItemData } from '../../../../types/models';
 import { Card, HeadingLevel, PriceWithDiscount } from '../../../../ui';
 
@@ -10,7 +9,6 @@ interface ProductCardProps {
 
 export default function ProductCard({ level, product }: ProductCardProps) {
   const translate = useDictionary('productCard');
-  const { routes } = useRouter();
 
   const badge =
     product.discounted &&
@@ -22,7 +20,7 @@ export default function ProductCard({ level, product }: ProductCardProps) {
       title={product.name}
       badge={badge}
       image={product.image}
-      href={routes.product(product.id)}
+      href={product.url}
     >
       {product.price && (
         <PriceWithDiscount

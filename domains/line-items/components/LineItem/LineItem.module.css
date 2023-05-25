@@ -11,6 +11,10 @@
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-medium);
   }
+  
+  & .description {
+    font-size: var(--font-size-s);
+  }
 
   & .thumbnail {
     grid-column: 1;

@@ -169,6 +169,9 @@
   "productCard": {
     "discount": "-{percent}%"
   },
+  "productVariantSelector": {
+    "title": "Warianty"
+  },
   "productOption": {
     "size": "Rozmiar"
   },

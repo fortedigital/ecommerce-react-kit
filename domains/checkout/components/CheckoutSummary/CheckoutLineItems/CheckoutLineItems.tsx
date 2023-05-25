@@ -1,5 +1,4 @@
 ﻿import useDictionary from '../../../../../localization/use-dictionary';
-import { useRouter } from '../../../../../platform';
 import { LineItemData } from '../../../../../types/models';
 import {
   Heading,
@@ -17,7 +16,6 @@ interface CheckoutLineItemsProps {
 
 export default function CheckoutLineItems({ items }: CheckoutLineItemsProps) {
   const translate = useDictionary('checkoutLineItems');
-  const { routes } = useRouter();
 
   return (
     <section>
@@ -29,18 +27,13 @@ export default function CheckoutLineItems({ items }: CheckoutLineItemsProps) {
           <List.Item className={styles.item} key={item.id}>
             <div className={styles.product}>
               <Heading level={3}>
-                <Link
-                  className={styles.link}
-                  href={routes.product(item.productId)}
-                >
+                <Link className={styles.link} href={item.url}>
                   {item.name}
                 </Link>
               </Heading>
-              <p className={styles.options}>
-                {item.options
-                  .map((o) => translate(o.parentId, { [o.parentId]: o.value }))
-                  .join(' | ')}
-              </p>
+              {item.description && (
+                <p className={styles.description}>{item.description}</p>
+              )}
             </div>
             {item.image && (
               <Thumbnail

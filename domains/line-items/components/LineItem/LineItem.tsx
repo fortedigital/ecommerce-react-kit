@@ -1,7 +1,5 @@
 ﻿import clsx from 'clsx';
 
-import LineItemOptions from './LineItemOptions';
-
 import useDictionary from '../../../../localization/use-dictionary';
 import { useRouter } from '../../../../platform';
 import { LineItemData } from '../../../../types/models';
@@ -39,9 +37,11 @@ export default function LineItem({
       <td className={clsx(styles.value, styles.info)}>
         <div>
           <Heading className={styles.title} level={2}>
-            <Link href={routes.product(item.productId)}>{item.name}</Link>
+            <Link href={item.url}>{item.name}</Link>
           </Heading>
-          <LineItemOptions options={item.options} />
+          {item.description && (
+            <p className={styles.description}>{item.description}</p>
+          )}
         </div>
         {item.image && (
           <Thumbnail

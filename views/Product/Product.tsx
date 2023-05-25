@@ -1,82 +1,61 @@
-﻿import { AddToCartButton } from '../../domains/cart/components';
-import { ProductOptionList } from '../../domains/products/components';
-import { useInitProductOptionChoicesInUrl } from '../../domains/products/hooks';
-import {
-  getActiveProductVariant,
-  restoreProductOptionChoicesFromUrl,
-} from '../../domains/products/utils';
+﻿import clsx from 'clsx';
+
+import { AddToCartButton } from '../../domains/cart/components';
 import useDictionary from '../../localization/use-dictionary';
-import { useRouter } from '../../platform';
-import { ProductData } from '../../types/models';
+import { ImageData, PriceData } from '../../types/models';
 import { Gallery, Heading, Markup, PriceWithDiscount } from '../../ui';
 
 import styles from './Product.module.css';
 
 interface ProductProps {
-  product: ProductData;
+  id: string;
+  images: ImageData[];
+  name: string;
+  description?: string;
+  discounted?: boolean;
+  forSale?: boolean;
+  originalPrice?: PriceData;
+  price?: PriceData;
+  variantSelector?: React.ReactNode;
 }
 
-export default function Product({ product }: ProductProps) {
+export default function Product({
+  description,
+  discounted = false,
+  forSale = false,
+  id,
+  images,
+  name,
+  originalPrice,
+  price,
+  variantSelector,
+}: ProductProps) {
   const translate = useDictionary('product');
-  const router = useRouter();
-
-  const optionChoices = restoreProductOptionChoicesFromUrl(
-    product.options,
-    router.searchParams
-  );
-  const activeVariant = getActiveProductVariant(
-    optionChoices,
-    product.variants
-  );
-  const activeVariantOrProduct = activeVariant ?? product;
-  const description = activeVariant?.description ?? product.description;
-
-  useInitProductOptionChoicesInUrl(router, optionChoices, activeVariant);
 
   return (
     <article className="block grid-l items-center">
-      <div className="col-span-5">
+      <div className={clsx('col-span-5', styles.content)}>
         <Heading level={1} size="l">
-          {product.name}
+          {name}
         </Heading>
-
-        {description && <Markup className={styles.block}>{description}</Markup>}
-
-        {product.options && (
-          <ProductOptionList
-            className={styles.block}
-            options={product.options}
-          />
-        )}
-
-        {activeVariantOrProduct.price && (
+        {description && <Markup>{description}</Markup>}
+        {variantSelector}
+        {price && (
           <PriceWithDiscount
-            className={styles.price}
-            amount={activeVariantOrProduct.price.amount}
-            currencyCode={activeVariantOrProduct.price.currencyCode}
-            originalAmount={
-              activeVariantOrProduct.discounted
-                ? activeVariantOrProduct.originalPrice?.amount
-                : undefined
-            }
+            amount={price.amount}
+            currencyCode={price.currencyCode}
+            originalAmount={discounted ? originalPrice?.amount : undefined}
             size="l"
           />
         )}
-
-        {activeVariantOrProduct.forSale && (
-          <AddToCartButton
-            className={styles.button}
-            itemId={activeVariantOrProduct.id}
-          >
-            {translate('toCart')}
-          </AddToCartButton>
+        {forSale && (
+          <AddToCartButton itemId={id}>{translate('toCart')}</AddToCartButton>
         )}
       </div>
-
       <Gallery
         className="col-span-7"
         title={translate('gallery')}
-        images={product.images}
+        images={images}
       />
     </article>
   );

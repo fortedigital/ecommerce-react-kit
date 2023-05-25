@@ -66,10 +66,11 @@ export interface LineItemData extends EntityData {
   productId: string;
   unitPrice: PriceData;
   quantity: number;
-  options: ProductOptionChoiceData[];
   originalPrice: PriceData;
   discounted: boolean;
   price: PriceData;
+  url: string;
+  description?: string;
   image?: ImageData;
 }
 
@@ -101,10 +102,10 @@ export interface PriceData {
 }
 
 export interface ProductData extends EntityData {
-  name: string;
   discounted: boolean;
   forSale: boolean;
   images: ImageData[];
+  name: string;
   options: ProductOptionData[];
   variants: ProductVariantData[];
   description?: string;
@@ -115,6 +116,7 @@ export interface ProductData extends EntityData {
 
 export interface ProductListItemData extends EntityData {
   name: string;
+  url: string;
   discounted?: boolean;
   discountPercent?: number;
   image?: ImageData;
@@ -122,13 +124,12 @@ export interface ProductListItemData extends EntityData {
   price?: PriceData;
 }
 
-export interface ProductOptionData {
-  id: ProductOption;
+export interface ProductOptionData extends EntityData {
   values: string[];
 }
 
 export interface ProductOptionChoiceData {
-  parentId: ProductOption;
+  optionId: string;
   value: string;
 }
 
@@ -136,7 +137,8 @@ export interface ProductVariantData extends EntityData {
   name: string;
   discounted: boolean;
   forSale: boolean;
-  options: ProductOptionChoiceData[];
+  images: ImageData[];
+  optionChoices: ProductOptionChoiceData[];
   description?: string;
   discountPercent?: number;
   originalPrice?: PriceData;
@@ -154,8 +156,4 @@ export interface ShippingOptionData {
 export interface ShipmentData {
   address: AddressData;
   shippingMethodName: string;
-}
-
-export enum ProductOption {
-  Size = 'size',
 }
