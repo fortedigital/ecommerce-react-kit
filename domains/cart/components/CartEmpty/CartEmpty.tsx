@@ -1,17 +1,18 @@
-﻿import useDictionary from '../../../../localization/use-dictionary';
+﻿import useRouter from '@platform/hooks/use-router';
+
+import useDictionary from '../../../../localization/use-dictionary';
 import { Link } from '../../../../ui';
-import useRouter from "@platform/hooks/use-router";
 
 export default function CartEmpty() {
   const translate = useDictionary('cartEmpty');
-  const router = useRouter();
-  
+  const { routes } = useRouter();
+
   return (
     <div>
       <p>{translate('noItems')}</p>
       <Link
         className="block-gap-s"
-        href={router.routes.catalog}
+        href={routes.catalog}
         color="primary"
         size="medium"
         variant="solid"
