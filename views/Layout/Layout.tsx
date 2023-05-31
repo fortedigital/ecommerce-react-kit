@@ -2,8 +2,8 @@
 
 import Header from './Header';
 
-import useDictionary from '@ecommerce-kit/localization/use-dictionary';
-import { Breadcrumb, Breadcrumbs } from '@ecommerce-kit/ui';
+import useDictionary from '../../localization/use-dictionary';
+import { Breadcrumb, Breadcrumbs } from '../../ui';
 
 import styles from './Layout.module.css';
 
