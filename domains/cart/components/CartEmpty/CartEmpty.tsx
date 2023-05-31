@@ -12,7 +12,7 @@ export default function CartEmpty() {
       <p>{translate('noItems')}</p>
       <Link
         className="block-gap-s"
-        href={routes.catalog}
+        href={routes.catalog()}
         color="primary"
         size="medium"
         variant="solid"

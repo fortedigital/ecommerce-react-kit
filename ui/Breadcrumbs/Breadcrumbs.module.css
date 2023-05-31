@@ -1,0 +1,17 @@
+﻿.list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item {
+  font-size: var(--font-size-s);
+  
+  &:not(:last-child)::after {
+    content: "/";
+    margin: 0 var(--size-2x);
+  }
+}
+
+.link[aria-current="page"] {
+  font-weight: var(--font-weight-medium);
+}

@@ -28,6 +28,9 @@
   "catalog": {
     "title": "Products"
   },
+  "categoryList": {
+    "title": "Categories"
+  },
   "checkout": {
     "title": "Checkout"
   },
@@ -133,6 +136,17 @@
     "products": "Popular products",
     "toProducts": "Explore all products"
   },
+  "layout": {
+    "breadcrumbs": {
+      "title": "Breadcrumbs",
+      "home": "Home",
+      "catalog": "Products"
+    },
+    "navigation": {
+      "menu": "Menu",
+      "products": "Products"
+    }
+  },
   "lineItem": {
     "delete": "Delete item",
     "quantity": "Quantity"
@@ -145,10 +159,6 @@
     "quantity": "Quantity",
     "unitPrice": "Unit price",
     "total": "Total"
-  },
-  "navigation": {
-    "menu": "Menu",
-    "products": "Products"
   },
   "order": {
     "title": "Order #{id}",

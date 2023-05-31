@@ -19,7 +19,7 @@ export interface EcommerceClient {
 
 export interface Routes {
   cart: string;
-  catalog: string;
+  catalog: (slug?: string) => string;
   checkout: string;
   home: string;
   order: (id: string) => string;

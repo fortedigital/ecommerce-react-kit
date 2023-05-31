@@ -28,6 +28,9 @@
   "catalog": {
     "title": "Produkty"
   },
+  "categoryList": {
+    "title": "Kategorie"
+  },
   "checkout": {
     "title": "Kasa"
   },
@@ -133,6 +136,17 @@
     "products": "Popularne produkty",
     "toProducts": "Odkryj pozostałe produkty"
   },
+  "layout": {
+    "breadcrumbs": {
+      "title": "Ścieżka okruszków",
+      "home": "Strona główna",
+      "catalog": "Produkty"
+    },
+    "navigation": {
+      "menu": "Menu",
+      "products": "Produkty"
+    }
+  },
   "lineItem": {
     "delete": "Usuń produkt",
     "quantity": "Liczba sztuk"
@@ -145,10 +159,6 @@
     "quantity": "Liczba sztuk",
     "unitPrice": "Koszt 1 sztuki",
     "total": "Suma"
-  },
-  "navigation": {
-    "menu": "Menu",
-    "products": "Produkty"
   },
   "order": {
     "title": "Zamówienie #{id}",

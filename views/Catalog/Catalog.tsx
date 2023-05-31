@@ -1,13 +1,15 @@
-﻿import { ProductList } from '../../domains/products/components';
+﻿import { CategoryList, ProductList } from '../../domains/products/components';
 import useDictionary from '../../localization/use-dictionary';
-import { ProductListItemData } from '../../types/models';
+import { CategoryData, ProductListItemData } from '../../types/models';
 import { Heading } from '../../ui';
 
 interface CatalogProps {
+  categories: CategoryData[];
   products: ProductListItemData[];
+  slug?: string;
 }
 
-export default function Catalog({ products }: CatalogProps) {
+export default function Catalog({ categories, products, slug }: CatalogProps) {
   const translate = useDictionary('catalog');
 
   return (
@@ -15,7 +17,10 @@ export default function Catalog({ products }: CatalogProps) {
       <Heading level={1} size="l">
         {translate('title')}
       </Heading>
-      <ProductList level={1} products={products} />
+      <div className="grid-l">
+        <CategoryList className="col-span-2" items={categories} slug={slug} />
+        <ProductList className="col-span-10" level={1} products={products} />
+      </div>
     </article>
   );
 }

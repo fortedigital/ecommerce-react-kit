@@ -6,7 +6,7 @@ import { Heading, Link } from '../../../../ui';
 import styles from './Navigation.module.css';
 
 export default function Navigation() {
-  const translate = useDictionary('navigation');
+  const translate = useDictionary('layout.navigation');
   const { routes } = useRouter();
 
   return (
@@ -14,7 +14,7 @@ export default function Navigation() {
       <Heading level={2} visuallyHidden>
         {translate('menu')}
       </Heading>
-      <Link href={routes.catalog} size="small" variant="ghost">
+      <Link href={routes.catalog()} size="small" variant="ghost">
         {translate('products')}
       </Link>
       <CartLink />

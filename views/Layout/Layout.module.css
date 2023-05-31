@@ -1,3 +1,7 @@
 ﻿.root {
   padding-block: var(--block-gap-small) var(--block-gap-medium);
+
+  & .breadcrumbs.breadcrumbs {
+    margin-bottom: var(--size-6x);
+  }
 }

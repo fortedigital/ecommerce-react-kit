@@ -10,8 +10,9 @@
   postcode?: string;
 }
 
-export interface EntityData {
-  id: string;
+export interface CategoryData extends EntityData {
+  name: string;
+  slug?: string;
 }
 
 export interface CartData extends EntityData {
@@ -54,6 +55,10 @@ export interface CustomerData extends EntityData {
   lastName?: string;
   phoneNumber?: string;
   address?: AddressData;
+}
+
+export interface EntityData {
+  id: string;
 }
 
 export interface ImageData {
@@ -110,6 +115,7 @@ export interface ProductData extends EntityData {
   variants: ProductVariantData[];
   description?: string;
   discountPercent?: number;
+  mainCategory?: CategoryData;
   originalPrice?: PriceData;
   price?: PriceData;
 }
