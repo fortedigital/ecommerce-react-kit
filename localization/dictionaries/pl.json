@@ -29,7 +29,8 @@
     "title": "Produkty"
   },
   "categoryList": {
-    "title": "Kategorie"
+    "title": "Kategorie",
+    "all": "Wszystkie"
   },
   "checkout": {
     "title": "Kasa"

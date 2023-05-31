@@ -6,10 +6,14 @@ import { Heading } from '../../ui';
 interface CatalogProps {
   categories: CategoryData[];
   products: ProductListItemData[];
-  slug?: string;
+  activeCategoryId?: string;
 }
 
-export default function Catalog({ categories, products, slug }: CatalogProps) {
+export default function Catalog({
+  activeCategoryId,
+  categories,
+  products,
+}: CatalogProps) {
   const translate = useDictionary('catalog');
 
   return (
@@ -18,7 +22,11 @@ export default function Catalog({ categories, products, slug }: CatalogProps) {
         {translate('title')}
       </Heading>
       <div className="grid-l">
-        <CategoryList className="col-span-2" items={categories} slug={slug} />
+        <CategoryList
+          className="col-span-2"
+          activeCategoryId={activeCategoryId}
+          items={categories}
+        />
         <ProductList className="col-span-10" level={1} products={products} />
       </div>
     </article>

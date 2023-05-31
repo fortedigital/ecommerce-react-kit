@@ -29,7 +29,8 @@
     "title": "Products"
   },
   "categoryList": {
-    "title": "Categories"
+    "title": "Categories",
+    "all": "All"
   },
   "checkout": {
     "title": "Checkout"

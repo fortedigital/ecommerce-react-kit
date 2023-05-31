@@ -12,7 +12,7 @@
 
 export interface CategoryData extends EntityData {
   name: string;
-  slug?: string;
+  url: string;
 }
 
 export interface CartData extends EntityData {

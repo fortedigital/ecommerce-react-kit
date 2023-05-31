@@ -14,7 +14,7 @@ export default function Navigation() {
       <Heading level={2} visuallyHidden>
         {translate('menu')}
       </Heading>
-      <Link href={routes.catalog()} size="small" variant="ghost">
+      <Link href={routes.catalog} size="small" variant="ghost">
         {translate('products')}
       </Link>
       <CartLink />
