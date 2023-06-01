@@ -6,6 +6,10 @@
   text-decoration: none;
   cursor: pointer;
 
+  &.fullWidth {
+    width: 100%;
+  }
+
   &.ghost,
   &.outline,
   &.solid,
@@ -14,14 +18,59 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    min-width: var(--size-min-tap-target);
-    font-size: var(--font-size-regular);
-    font-weight: var(--font-weight-medium);
     line-height: inherit;
   }
 
-  &.fullWidth {
-    width: 100%;
+  &.ghost,
+  &.outline,
+  &.solid {
+    font-size: var(--font-size-regular);
+    font-weight: var(--font-weight-medium);
+
+    &.small {
+      min-height: var(--size-min-tap-target);
+      padding: var(--size-half) var(--size);
+    }
+
+    &.medium {
+      min-height: 6rem;
+      padding: var(--size) var(--size-6x);
+    }
+  }
+
+  &.outline {
+    border: 1px solid;
+  }
+
+  &.outline,
+  &.solid {
+    border-radius: var(--border-radius);
+  }
+
+  &.underlined {
+    &::after {
+      content: '';
+      width: 100%;
+      background-color: currentcolor;
+      border-bottom-style: solid;
+    }
+
+    &.small {
+      font-size: var(--font-size-s);
+
+      &::after {
+        border-bottom-width: 1px;
+      }
+    }
+
+    &.medium {
+      font-size: var(--font-size-regular);
+      font-weight: var(--font-weight-medium);
+
+      &::after {
+        border-bottom-width: 2px;
+      }
+    }
   }
 
   &.colorAccent {
@@ -49,33 +98,5 @@
       background: var(--color-secondary);
       color: var(--color-primary);
     }
-  }
-
-  &.outline {
-    border: 1px solid;
-  }
-
-  &.outline,
-  &.solid {
-    border-radius: var(--border-radius);
-  }
-
-  &.underlined {
-    &::after {
-      content: '';
-      width: 100%;
-      height: 0.2rem;
-      background-color: currentcolor;
-    }
-  }
-
-  &.small {
-    min-height: var(--size-min-tap-target);
-    padding: var(--size-half) var(--size);
-  }
-
-  &.medium {
-    min-height: 6rem;
-    padding: var(--size) var(--size-6x);
   }
 }

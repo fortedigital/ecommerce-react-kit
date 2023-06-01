@@ -1,0 +1,13 @@
+﻿.list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item:not(:last-child)::after {
+  content: '/';
+  margin: 0 var(--size-2x);
+}
+
+.current {
+  font-size: var(--font-size-s);
+}

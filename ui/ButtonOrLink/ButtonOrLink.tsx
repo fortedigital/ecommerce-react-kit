@@ -16,7 +16,7 @@ export default function ButtonOrLink({
   className,
   color,
   fullWidth = false,
-  size,
+  size = "medium",
   variant,
   ...props
 }: ButtonOrLinkProps) {

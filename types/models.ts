@@ -61,6 +61,11 @@ export interface EntityData {
   id: string;
 }
 
+export interface BreadcrumbData {
+  name: string;
+  url?: string;
+}
+
 export interface ImageData {
   alt: string;
   src: string;

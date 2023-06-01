@@ -1,9 +1,0 @@
-﻿.root {
-  display: block;
-  padding: var(--size) 0;
-  font-size: var(--font-size-s);
-
-  &[aria-current='page'] {
-    font-weight: var(--font-weight-medium);
-  }
-}

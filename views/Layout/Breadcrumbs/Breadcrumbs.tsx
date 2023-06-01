@@ -1,16 +1,11 @@
-﻿import Link from '../Link';
-import List from '../List';
+﻿import { BreadcrumbData } from '../../../types/models';
+import Link from '../../../ui/Link';
+import List from '../../../ui/List';
 
 import styles from './Breadcrumbs.module.css';
 
-export interface Breadcrumb {
-  name: string;
-  url: string;
-  isActive?: boolean;
-}
-
 interface BreadcrumbsProps {
-  items: Breadcrumb[];
+  items: BreadcrumbData[];
   title: string;
   className?: string;
 }
@@ -20,22 +15,18 @@ export default function Breadcrumbs({
   items,
   title,
 }: BreadcrumbsProps) {
-  if (items.length === 0) {
-    return null;
-  }
-
   return (
     <nav className={className} aria-label={title}>
       <List as="ol" className={styles.list} items={items}>
         {(item) => (
           <List.Item className={styles.item} key={item.name}>
-            <Link
-              className={styles.link}
-              href={item.url}
-              aria-current={item.isActive ? 'page' : false}
-            >
-              {item.name}
-            </Link>
+            {item.url ? (
+              <Link href={item.url} variant="underlined" size="small">
+                {item.name}
+              </Link>
+            ) : (
+              <span className={styles.current}>{item.name}</span>
+            )}
           </List.Item>
         )}
       </List>

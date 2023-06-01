@@ -1,0 +1,8 @@
+﻿.root {
+  display: block;
+  padding: var(--size) 0;
+
+  &.active {
+    font-size: var(--font-size-s);
+  }
+}

@@ -1,4 +1,4 @@
-﻿import { CategoryList, ProductList } from '../../domains/products/components';
+﻿import { CategoryNav, ProductList } from '../../domains/products/components';
 import useDictionary from '../../localization/use-dictionary';
 import { CategoryData, ProductListItemData } from '../../types/models';
 import { Heading } from '../../ui';
@@ -22,10 +22,10 @@ export default function Catalog({
         {translate('title')}
       </Heading>
       <div className="grid-l">
-        <CategoryList
+        <CategoryNav
           className="col-span-2"
           activeCategoryId={activeCategoryId}
-          items={categories}
+          categories={categories}
         />
         <ProductList className="col-span-10" level={1} products={products} />
       </div>

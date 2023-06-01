@@ -1,15 +1,16 @@
 ﻿import clsx from 'clsx';
 
+import Breadcrumbs from './Breadcrumbs';
 import Header from './Header';
 
-import useDictionary from '@ecommerce-kit/localization/use-dictionary';
-import { Breadcrumb, Breadcrumbs } from '@ecommerce-kit/ui';
+import useDictionary from '../../localization/use-dictionary';
+import { BreadcrumbData } from '../../types/models';
 
 import styles from './Layout.module.css';
 
 interface LayoutProps {
   children: React.ReactNode;
-  breadcrumbs?: Breadcrumb[];
+  breadcrumbs?: BreadcrumbData[];
   className?: string;
 }
 

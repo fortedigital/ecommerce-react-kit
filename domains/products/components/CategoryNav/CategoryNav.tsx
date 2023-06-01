@@ -1,35 +1,37 @@
-﻿import CategoryLink from './CategoryLink';
+﻿import CategoryNavLink from './CategoryNavLink';
 
 import useDictionary from '../../../../localization/use-dictionary';
 import { useRouter } from '../../../../platform';
 import { CategoryData } from '../../../../types/models';
 import { List } from '../../../../ui';
 
-interface CategoryListProps {
-  items: CategoryData[];
+const allCategoriesNavLinkId = 'all';
+
+interface CategoryNavProps {
+  categories: CategoryData[];
   activeCategoryId?: string;
   className?: string;
 }
 
-export default function CategoryList({
-  activeCategoryId,
+export default function CategoryNav({
+  activeCategoryId = allCategoriesNavLinkId,
+  categories,
   className,
-  items,
-}: CategoryListProps) {
+}: CategoryNavProps) {
   const { routes } = useRouter();
   const translate = useDictionary('categoryList');
 
-  const categories: CategoryData[] = [
-    { id: 'all', name: translate('all'), url: routes.catalog },
-    ...items,
+  const items: CategoryData[] = [
+    { id: allCategoriesNavLinkId, name: translate('all'), url: routes.catalog },
+    ...categories,
   ];
 
   return (
     <nav className={className} aria-label={translate('title')}>
-      <List items={categories}>
+      <List items={items}>
         {(item) => (
           <List.Item key={item.id}>
-            <CategoryLink
+            <CategoryNavLink
               category={item}
               isActive={item.id === activeCategoryId}
             />

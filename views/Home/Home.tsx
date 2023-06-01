@@ -31,7 +31,12 @@ export default function Home({ heroImage, products }: HomeProps) {
         </Heading>
         <ProductList level={2} products={products} />
         <div className="block-gap-m align-right">
-          <Link href={routes.catalog} color="primary" variant="underlined">
+          <Link
+            href={routes.catalog}
+            color="primary"
+            variant="underlined"
+            size="medium"
+          >
             {translate('toProducts')} →
           </Link>
         </div>
