@@ -4,6 +4,10 @@ import { client } from '../../../platform';
 import { useFetch } from '../../../utils';
 
 export default function useCart() {
+  // HACK: Temporary workaround for swr not returning loading: true when run on the server from dotnet
+  if (typeof window === "undefined") {
+    return { cart: undefined, count: 0, isLoading: true, refreshCart: () => {}};
+  }
   const { data, isLoading, mutate } = useFetch('/api/cart', client.cartGet);
   const count = data?.count ?? 0;
 
