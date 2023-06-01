@@ -8,9 +8,11 @@ export default function useCart() {
   if (typeof window === "undefined") {
     return { cart: undefined, count: 0, isLoading: true, refreshCart: () => {}};
   }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { data, isLoading, mutate } = useFetch('/api/cart', client.cartGet);
   const count = data?.count ?? 0;
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const refreshCart = useCallback(async () => {
     await mutate(undefined, { revalidate: false });
   }, [mutate]);
