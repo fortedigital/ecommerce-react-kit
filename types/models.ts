@@ -97,8 +97,7 @@ export interface OrderData extends EntityData {
 export interface PaymentData {
   amount: number;
   currencyCode: string;
-  paymentMethodName: string;
-  transactionType?: string;
+  paymentMethodId: string;
 }
 
 export interface PaymentMethodData {

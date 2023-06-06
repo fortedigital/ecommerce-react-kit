@@ -20,7 +20,7 @@ export function composeCheckoutData(
     contact,
     payment: {
       ...cart.subtotal,
-      paymentMethodName: paymentMethod,
+      paymentMethodId: paymentMethod,
     },
     shipment: {
       address: { ...contact, ...address },
