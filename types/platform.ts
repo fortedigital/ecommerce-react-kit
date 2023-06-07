@@ -1,6 +1,4 @@
-﻿import { UrlObject } from 'url';
-
-import { CartData, CheckoutData, OrderData } from './models';
+﻿import { CartData, CheckoutData, OrderData } from './models';
 
 export interface EcommerceClient {
   cartAddItem(itemId: string): Promise<CartData | undefined>;
@@ -42,5 +40,5 @@ export interface ImageProps {
 
 export interface LinkProps {
   children: React.ReactNode;
-  href: string | UrlObject;
+  href: string;
 }
