@@ -51,7 +51,9 @@ export default function CheckoutLineItems({ items }: CheckoutLineItemsProps) {
               className={styles.price}
               amount={item.price.amount}
               currencyCode={item.price.currencyCode}
-              originalAmount={item.originalPrice.amount}
+              originalAmount={
+                item.discounted ? item.originalPrice.amount : undefined
+              }
               size="xs"
             />
           </List.Item>
