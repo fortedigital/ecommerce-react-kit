@@ -49,7 +49,7 @@ export default function PriceWithDiscount({
         currencyCode={currencyCode}
         total={total}
       />
-      {originalAmount && (
+      {originalAmount && originalAmount > amount && (
         <Price
           className={styles.originalPrice}
           amount={originalAmount}
